@@ -1,0 +1,59 @@
+include ../../common/index.pug
+include ../interview/interview.pug
+
+mixin speaker_page(data)
+  +b.item._full._page(tabIndex="0")
+    +e.block._info
+      +e.header
+        +b.H3.caption Немного об авторе
+      +e.text
+        p. 
+          Давно выяснено, что при оценке дизайна и композиции читаемый текст 
+          мешает сосредоточиться. Lorem Ipsum используют потому, что тот 
+          обеспечивает более или Давно выяснено, что при оценке дизайна и 
+          композиции читаемый текст мешает сосредоточиться. Lorem Ipsum 
+          используют потому, что тот обеспечивает более или 
+          
+      +b.UL.list
+        +e.LI.item
+          +link({
+            name: 'Полезные статьи',
+            href: '#',
+            ico: {
+              name: 'ico-doc'
+            }
+          })
+        +e.LI.item
+          +link({
+            name: 'Полезные видео',
+            href: '#',
+            ico: {
+              name: 'ico-play',
+              size: [20,20]
+            }
+          })
+            
+      +e.footer
+        +b.UL.list._inline
+          +e.LI.item
+            +button({
+              type: 'link',
+              name: 'Курсы от автора',
+              href: '#',
+              style: 0
+            })
+          +e.LI.item
+            +button({
+              type: 'link',
+              name: 'Вебинары автора',
+              href: '#',
+              style: 0
+            })
+          
+    +e.block._image
+      +e.image
+        img(src=global.paths.pictures+data.img alt=data.name)
+          
+    +e.interview
+      +interview
+      

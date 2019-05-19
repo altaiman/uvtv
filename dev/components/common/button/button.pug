@@ -1,0 +1,15 @@
+include data.pug
+
+mixin button(data)
+  - if (data.type == 'button')
+    +b.BUTTON.button(
+      class=((data.size) ? `_size-${data.size}` : '') 
+      class=buttonStyles[data.style])
+      span= data.name
+      
+  - else if (data.type == 'link')
+    +b.A.button(
+      class=((data.size) ? `_size-${data.size}` : '') 
+      class=buttonStyles[data.style] 
+      href=data.href)
+      span= data.name

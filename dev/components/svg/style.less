@@ -1,0 +1,30 @@
+.ico {
+  position: relative;
+  display: inline-block;
+  margin: 0 8px;
+  width: 24px;
+  height: 24px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  svg,
+  img {
+    .positionCenter();
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.ico_highlight {
+  color: @colorHighlight;
+}

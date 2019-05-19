@@ -1,0 +1,13 @@
+mixin item_video(data)
+  +b.A.item._video(href="#")
+    +e.DIV.block._image
+      +e.DIV.image
+        img(src=global.paths.pictures+data.img alt=data.title)
+      +e.DIV.hover
+        +b.DIV.ico
+          +svg({
+            name: 'ico-media'
+          })
+        span Смотреть бесплатно
+    +e.DIV.block
+      +e.H4.title= data.title

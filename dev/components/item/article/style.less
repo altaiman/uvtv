@@ -1,0 +1,40 @@
+.item_article {
+  padding-top: 8px;
+  font-size: @fontSizeDefaultS;
+  line-height: 1.6;
+  box-shadow: none;
+  background: @colorBackgroundGray;
+
+  .item {
+    &__image {
+      height: 255px;
+    }
+
+    &__title {
+      padding-right: 24px;
+      height: 44px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &__text {
+      margin: 0 0 8px;
+      padding: 0;
+      height: 66px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  &:hover {
+    .item {
+      &__text {
+        color: @colorText;
+      }
+    }
+  }
+}

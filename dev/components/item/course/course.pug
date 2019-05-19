@@ -1,0 +1,32 @@
+mixin item_course(data)
+  +b.item._course(tabIndex="0")
+    +e.block._course(style="background-color: #E9EB7A;")
+        
+    +e.block._info
+      +b.SPAN.subcaption Название курса
+      +b.SPAN.caption._size-s Yandex zen 80% дочитываний
+      +e.content
+        +b.SPAN.caption._size-xs Базовый курс
+        +b.UL.list
+          +e.LI.item
+            +b.tag
+              +e.ico
+                +svg({
+                  name: 'ico-play',
+                  size: [13,13]
+                })
+              span 15 видеоуроков
+          +e.LI.item
+            +b.tag
+              +e.ico
+                +svg({
+                  name: 'ico-doc'
+                })
+              span 6 инструкций
+      +e.footer
+        +button({
+          type: 'link',
+          name: 'Купить курс',
+          href: '#',
+          size: 'full'
+        })

@@ -1,0 +1,77 @@
+.button {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 8px;
+  padding: 0 16px;
+  height: 56px;
+  font-size: @fontSizeButton;
+  font-weight: 600;
+  line-height: 56px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  color: @colorTextLight;
+  border: none;
+  border-radius: 5px;
+  background: @colorHighlight;
+  transform-origin: center;
+  transition: all .16s;
+
+  span {
+    display: block;
+  }
+
+  &:hover {
+    color: @colorHighlight;
+    background: @colorBackgroundLight;
+    box-shadow: inset 0 0 0 2px currentColor;
+  }
+
+  &:focus {
+    outline: none;
+    color: @colorHighlight;
+    background: @colorBackgroundLight;
+    box-shadow: inset 0 0 0 2px currentColor;
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.button_light {
+  color: @colorTextGray;
+  background: @colorBackgroundLight;
+  box-shadow: inset 0 0 0 2px @colorBorder;
+
+  &:hover {
+    color: @colorHighlight;
+    box-shadow: inset 0 0 0 2px currentColor;
+  }
+}
+
+.button_size-s {
+  padding: 0 16px;
+  height: 40px;
+  line-height: 40px;
+  font-size: @fontSizeDefault;
+  font-weight: 500;
+}
+
+.button_size-wide {
+  padding: 0 32px;
+}
+
+.button_size-full {
+  display: block;
+  padding: 0;
+  width: 100%;
+}

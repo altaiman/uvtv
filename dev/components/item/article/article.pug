@@ -1,0 +1,15 @@
+mixin item_article(data)
+  +b.A.item._article(href="#")
+    +e.DIV.block
+      +e.H4.title= data.title
+      +e.DIV.text
+        p= data.text
+    +e.DIV.block._image
+      +e.DIV.image
+        img(src=global.paths.pictures+data.img alt=data.title)
+      +e.DIV.hover
+        +b.DIV.ico
+          +svg({
+            name: 'ico-eye'
+          })
+        span Читать бесплатно

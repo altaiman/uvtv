@@ -1,0 +1,14 @@
+include data.pug
+
+mixin sliderArticles(data)
+  +slider({
+    title: data.title,
+    slider: 'items'
+  })
+    each item in articlesData
+      +e.LI.slide
+        +item_article({
+          title: item.title,
+          text: item.text,
+          img: item.img
+        })

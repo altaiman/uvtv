@@ -1,0 +1,49 @@
+.header {
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    font-size: @fontSizeDefault;
+    font-weight: 500;
+    color: @colorTextGray;
+  }
+
+  &__menu {
+    .positionCenter-Y();
+    right: 16px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: @colorBackgroundGray;
+    border: none;
+    transition: all .16s;
+
+    .ico {
+      .positionCenter();
+    }
+
+    &:hover,
+    &:focus {
+      background: @colorHighlight;
+      color: @colorTextLight;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__top {
+    padding: 24px 0 25px;
+  }
+
+  &__main {
+    padding: 57px 0 58px;
+    background: @colorBackgroundGray;
+  }
+}

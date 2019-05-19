@@ -1,0 +1,26 @@
+.item_video {
+  font-size: @fontSizeDefaultS;
+  text-align: center;
+  box-shadow: none;
+
+  &:focus,
+  &:hover {
+    box-shadow: none;
+
+    .item {
+      &__block_image {
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  .item {
+    &__block_image {
+      height: 350px;
+    }
+
+    &__title {
+      color: @colorTextGray;
+    }
+  }
+}

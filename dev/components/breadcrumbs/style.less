@@ -1,0 +1,47 @@
+.breadcrumbs {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: bottom;
+    font-weight: 500;
+
+    &::after {
+      display: inline-block;
+      vertical-align: bottom;
+      content: '°';
+      pointer-events: none;
+    }
+
+    a {
+      color: currentColor;
+      transition: all .16s;
+
+      &:hover,
+      &:focus {
+        color: @colorHighlight;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &:last-child {
+      a {
+        pointer-events: none;
+        color: @colorTextGray;
+        text-decoration: none;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

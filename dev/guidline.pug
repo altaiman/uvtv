@@ -1,0 +1,85 @@
+//- includes
+include components/head/index.pug
+include components/svg/index.pug
+
+include components/header/index.pug
+include components/common/index.pug
+include components/item/index.pug
+include components/footer/index.pug
+include components/footer/scripts.pug
+
+//- end includes
+
+//- variables page 
+- 
+	pageSettings = {
+		title: 'Гайдлайн'
+	}
+	
+//- end variables
+
+doctype html
+html(lang=global.lang)
+	+head(pageSettings)
+	+b.BODY.page
+		+header({
+			title: pageSettings.title
+		})
+		
+		+e.MAIN.content
+			+b.container
+				+b.component
+					+b.SPAN.caption Лэйбл
+					+e.line
+						+label({
+							name: 'Сексолог'
+						})
+					
+					+b.SPAN.caption Ссылка
+					+e.line
+						+link({
+							name: 'Ссылка',
+							href: '#'
+						})
+						+link({
+							name: 'Ссылка с иконкой',
+							href: '#',
+							ico: {
+								name: 'ico-doc'
+							}
+						})
+					
+					+b.SPAN.caption Кнопка
+					+e.line
+						+button({
+							type: 'link',
+							name: 'LINK',
+							href: '#link'
+						})
+						+button({
+							type: 'button',
+							name: 'BUTTON'
+						})
+						+button({
+							type: 'button',
+							name: 'BUTTON-light',
+							style: 0,
+						})
+						
+					+b.SPAN.caption Кнопка - маленькая
+					+e.line
+						+button({
+							type: 'button',
+							name: 'BUTTON-size-s',
+							size: 's'
+						})
+						+button({
+							type: 'button',
+							name: 'BUTTON-light-size-s',
+							style: 0,
+							size: 's'
+						})
+
+		+footer
+		
+		+scripts

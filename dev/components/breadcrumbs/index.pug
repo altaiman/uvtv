@@ -1,0 +1,8 @@
+mixin breadcrumbs(data)
+  +b.breadcrumbs
+    +e.UL.list
+      +e.LI.item
+        +b.A(href="index.html") Главная
+      each item in data
+        +e.LI.item
+          +b.A(href=item.href)= item.name

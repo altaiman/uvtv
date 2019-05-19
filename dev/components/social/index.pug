@@ -1,0 +1,34 @@
+include ../global.pug
+include data.pug
+
+- 
+  const social = [
+    {
+      name: 'ВКонтакте',
+      symbol: 'soc-vk'
+    },{
+      name: 'Facebook',
+      symbol: 'soc-fb'
+    },{
+      name: 'Twitter',
+      symbol: 'soc-tw'
+    },{
+      name: 'Одноелассники',
+      symbol: 'soc-ok'
+    },{
+      name: 'YouTube',
+      symbol: 'soc-ytb'
+    },{
+      name: 'Instagram',
+      symbol: 'soc-inst'
+    }
+  ]
+
+mixin social_header(data)
+  +b.UL.social
+    each item in data
+      +e.LI.item._transparent._onecolor
+        span= item.name
+      
+      
+  

@@ -1,0 +1,11 @@
+mixin link(data)
+  - if (data.ico)
+    +b.A.link(href=data.href)
+      +e.ico.ico
+        +svg({
+          name: data.ico.name,
+          size: data.ico.size
+        })
+      span= data.name
+  - else 
+    +b.A.link(href=data.href)= data.name

@@ -1,0 +1,30 @@
+.link {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 8px;
+  font-weight: 500;
+  color: @colorLink;
+  transition: all .16s;
+
+  &:hover,
+  &:focus {
+    color: @colorHighlight;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__ico {
+    position: relative;
+    top: 6px;
+  }
+}

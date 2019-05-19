@@ -1,0 +1,76 @@
+@import url('button/style.less');
+@import url('link/style.less');
+@import url('label/style.less');
+
+.title {
+  display: block;
+  margin: 0 0 8px;
+  font-size: @fontSizeTitle;
+  font-weight: 600;
+}
+
+.title_centered {
+  text-align: center;
+}
+
+.caption {
+  display: block;
+  margin: 0 0 16px;
+  font-size: @fontSizeCaption;
+  font-weight: 700;
+  line-height: 1.4;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.caption_size-s {
+  font-size: @fontSizeCaptionS;
+}
+
+.caption_size-xs {
+  font-size: @fontSizeCaptionXS;
+  margin: 0 0 8px;
+}
+
+.subcaption {
+  display: block;
+  margin: 0 0 8px;
+  .fontLabel();
+  color: @colorTextGray;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  font-size: @fontSizeDefaultS;
+  font-weight: 500;
+  color: @colorTextGray;
+
+  &__ico {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      fill: @colorText;
+    }
+
+    svg,
+    img {
+      .positionCenter();
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}

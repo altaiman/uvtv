@@ -1,0 +1,66 @@
+include ../../common/index.pug
+include ../interview/interview.pug
+
+mixin speaker(data)
+  +b.item._full(tabIndex="0")
+    +e.block._info
+      +e.header
+        +b.SPAN.subcaption Спикер
+        +b.H3.caption
+          span!= data.name
+          +label({
+            name: data.label
+          })
+      +e.text
+        p. 
+          Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает 
+          сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или 
+      +b.SPAN.caption._size-s Автор курсов
+      +b.UL.list._inline
+        each item in data.courses
+          +e.LI.item
+            +button({
+              type: 'link',
+              name: item,
+              href: '#',
+              style: 0,
+              size: 's'
+            })
+        +e.LI.item
+          +button({
+            type: 'link',
+            name: '...',
+            href: '#',
+            style: 0,
+            size: 's'
+          })
+      +b.UL.list
+        +e.LI.item
+          +link({
+            name: 'Полезные статьи',
+            href: '#',
+            ico: {
+              name: 'ico-doc'
+            }
+          })
+        +e.LI.item
+          +link({
+            name: 'Полезные видео',
+            href: '#',
+            ico: {
+              name: 'ico-play',
+              size: [20,20]
+            }
+          })
+            
+      +e.footer
+        +b.A.button._size-wide(href="#")
+          span Подробнее
+          
+    +e.block._image
+      +e.image
+        img(src=global.paths.pictures+data.img alt=data.name)
+          
+    +e.interview
+      +interview
+      

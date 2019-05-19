@@ -1,0 +1,29 @@
+include ../global.pug
+include ../breadcrumbs/index.pug
+
+mixin header(data)
+  +b.HEADER.header
+    +e.top
+      +e.container.container
+        +e.H1.title
+          +b.ico._highlight
+            +svg({
+              name: 'ico-smile'
+            })
+          span Видеокурсы которые делают вашу жизнь лучше!
+          
+        +e.BUTTON.menu
+          +b.ico
+            +svg({
+              name: 'ico-menu'
+            })
+    +e.main
+      +e.container.container
+        +b.H2.title= data.title
+        +breadcrumbs([
+          {
+            name: 'Текущая страница',
+            href: '#'
+          }
+        ])
+  
