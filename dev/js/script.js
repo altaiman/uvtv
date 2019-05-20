@@ -59,6 +59,47 @@
     }
   })
 
+  // drop
+
+  document.addEventListener('click', (e) => {
+    const drop = document.querySelector('[data-drop-state="1"]')
+
+    if (drop && !e.target.closest('.drop.show') && !e.target.closest('[data-drop-state="1"]')) {
+      e.preventDefault()
+      drop.click()
+    }
+
+  })
+
+  document.querySelectorAll('[data-drop]').forEach((drop, i) => {
+    drop.addEventListener('click', (e) => {
+      e.preventDefault()
+
+      const data = drop.dataset.drop,
+            dropContent = document.querySelector(`[data-drop-content="${data}"]`),
+            state = Number(drop.dataset.dropState)
+
+      switch (state) {
+        case 0:
+          dropContent.classList.add('show')
+          break
+        case 1:
+          dropContent.classList.remove('show')
+          break
+      }
+
+      drop.dataset.dropState = Number(!state)
+
+    })
+
+    drop.addEventListener('keydown', (e) => {
+      if (e.keyCode === 13) {
+        e.preventDefault()
+        e.target.click()
+      }
+    })
+  })
+
   // modals
   document.querySelectorAll('[data-modal-open]').forEach((trigger, i) => {
     trigger.addEventListener('click', (e) => {

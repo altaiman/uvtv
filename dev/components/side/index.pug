@@ -1,2 +1,76 @@
+include ../common/logotype/logotype.pug
+
 mixin side(data)
   +b.side
+    +e.content
+      +e.block
+        +logotype('_side')
+      +e.block  
+        +b.avatar
+          +e.img
+            img(src=global.paths.pictures+'photo.jpg' alt="Юрий Колесников")
+          +e.drop
+            +b.SPAN.caption._size-s(tabIndex="0" data-drop="avatar-menu" data-drop-state="0") Юрий Колесников
+            +b.drop._wide(data-drop-content="avatar-menu")
+              +e.UL.list
+                +e.LI.item
+                  a(href="#") Профиль
+                +e.LI.item
+                  a(href="#") Сменить пользователя
+                  
+      +e.block
+        +b.NAV.nav
+          +e.UL.list
+            +e.LI.item
+              +e.A.link(href="#" data-count="82")
+                +b.DIV.ico
+                  +svg({
+                    name: 'ico-book'
+                  })
+                span Курсы
+            +e.LI.item
+              +e.A.link(href="#")
+                +b.DIV.ico
+                  +svg({
+                    name: 'ico-mic'
+                  })
+                span Спикеры
+            +e.LI.item
+              +e.A.link(href="#")
+                +b.DIV.ico
+                  +svg({
+                    name: 'ico-article'
+                  })
+                span Статьи
+            +e.LI.item
+              +e.A.link(href="#" data-count="12")
+                +b.DIV.ico
+                  +svg({
+                    name: 'ico-courses'
+                  })
+                span Мои курсы
+                
+    +e.footer
+      +b.UL.list
+        +e.LI.item
+          +link({
+            name: 'support@institute-bm.com',
+            href: 'mailto:support@institute-bm.com',
+            style: 0,
+            ico: {
+              name: 'ico-mail',
+              sizeContainer: '_size-s'
+            }
+          })
+        +e.LI.item
+          +link({
+            name: '8 800 500 34 21',
+            href: 'tel:88005003421',
+            style: 0,
+            ico: {
+              name: 'ico-tel',
+              sizeContainer: '_size-s'
+            }
+          })
+          
+      

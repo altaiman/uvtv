@@ -1,0 +1,167 @@
+.side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+
+  &__block {
+    position: relative;
+    padding: 3.8vh 48px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      bottom: 0;
+      width: 29%;
+      height: 2px;
+      content: '';
+      background: @colorBackgroundGray;
+    }
+
+    &::before {
+      left: 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    &::after {
+      right: 0;
+      border-radius: 6px 0 0 6px;
+    }
+
+    &:last-child {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 3vh 48px;
+    background: @colorBackgroundGray;
+
+    .list {
+      &__item {
+        margin: 0 0 3vh;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.avatar {
+  position: relative;
+  padding: 120px 0 8px;
+  text-align: center;
+
+  &::before {
+    .positionCenter-X();
+    top: 20px;
+    content: '';
+    width: 116px;
+    height: 210px;
+    background: url('../img/hand.svg') no-repeat;
+  }
+
+  &__img {
+    position: relative;
+    display: block;
+    margin: 0 auto 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      .positionCenter();
+      min-width: 100%;
+      min-height: 100%;
+    }
+  }
+
+  &__drop {
+    position: relative;
+
+    .caption {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+    }
+  }
+}
+
+.nav {
+  font-size: @fontSizeCaptionS;
+  font-weight: 600;
+  color: @colorTextGray;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: block;
+    width: 100%;
+    margin: 0 0 4.2vh;
+
+    .ico {
+      margin: 0 12px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: currentColor;
+    transition: all .16s;
+
+    &:hover,
+    &:focus {
+      color: @colorHighlight;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+[data-count] {
+  position: relative;
+
+  &::after {
+    .positionCenter-Y();
+    right: 0;
+    width: 56px;
+    height: 26px;
+    content: attr(data-count);
+    line-height: 26px;
+    text-align: center;
+    white-space: nowrap;
+    color: @colorTextLight;
+    background: #9BA2A8;
+    border-radius: 31px;
+    transition: inherit;
+  }
+
+  &:hover {
+    &::after {
+      background: @colorHighlight;
+    }
+  }
+}

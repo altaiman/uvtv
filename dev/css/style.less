@@ -36,6 +36,7 @@ input[type=number] {
 	z-index: 1;
 	font-family: @fontText, sans-serif;
 	font-size: @fontSizeDefault;
+	font-weight: 500;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
@@ -56,12 +57,13 @@ input[type=number] {
 
 	&__side {
 		position: fixed;
+		z-index: 99;
 		left: 0;
 		top: 0;
 		width: 380px;
 		height: 100%;
-		padding-top: 32px;
-		background: @colorBackgroundGray;
+		background: #FBFBFB;
+		border-right: 1px solid #F4F4F4;
 	}
 
 	&__modals {
