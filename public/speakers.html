@@ -15,13 +15,33 @@
               <use xlink:href="img/symbols.svg#svg-ico-smile"></use>
             </svg></span><span>Видеокурсы которые делают вашу жизнь лучше!</span>
           </h1>
-          <button class="header__menu">
-            <div class="ico">
-              <svg>
-                <use xlink:href="img/symbols.svg#svg-ico-menu"></use>
-              </svg>
+          <div class="header__drop">
+            <button class="header__menu" data-drop="menu" data-drop-state="0">
+              <div class="ico">
+                <svg>
+                  <use xlink:href="img/symbols.svg#svg-ico-menu"></use>
+                </svg>
+              </div>
+            </button>
+            <div class="drop drop_pos-right" data-drop-content="menu">
+              <div class="drop__header"><span class="caption caption_size-s">Меню</span>
+              </div>
+              <nav>
+                <ul class="drop__list">
+                  <li class="drop__item"><a href="#">О нас</a>
+                  </li>
+                  <li class="drop__item"><a href="#">Наша команда</a>
+                  </li>
+                  <li class="drop__item"><a href="#">Спикеры</a>
+                  </li>
+                  <li class="drop__item"><a href="#">Благотворительность</a>
+                  </li>
+                  <li class="drop__item"><a href="#">Сотрудничество</a>
+                  </li>
+                </ul>
+              </nav>
             </div>
-          </button>
+          </div>
         </div>
       </div>
       <div class="header__main">

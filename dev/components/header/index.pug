@@ -11,12 +11,30 @@ mixin header(data)
               name: 'ico-smile'
             })
           span Видеокурсы которые делают вашу жизнь лучше!
+        
+        +e.drop
+          +e.BUTTON.menu(data-drop="menu" data-drop-state="0")
+            +b.ico
+              +svg({
+                name: 'ico-menu'
+              })
+              
+          +b.drop._pos-right(data-drop-content="menu")
+            +e.header
+              +b.SPAN.caption._size-s Меню
+            +b.NAV
+              +e.UL.list
+                +e.LI.item
+                  a(href="#") О нас
+                +e.LI.item
+                  a(href="#") Наша команда
+                +e.LI.item
+                  a(href="#") Спикеры
+                +e.LI.item
+                  a(href="#") Благотворительность
+                +e.LI.item
+                  a(href="#") Сотрудничество
           
-        +e.BUTTON.menu
-          +b.ico
-            +svg({
-              name: 'ico-menu'
-            })
     +e.main
       +e.container.container
         +b.H2.title= data.title

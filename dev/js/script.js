@@ -9,7 +9,6 @@
       cellAlign: 'left',
       pageDots: false,
       prevNextButtons: false,
-      draggable: false
     }
   }
 
@@ -26,7 +25,11 @@
           controlsNext = controls.querySelector('[data-slider-controls-next]'),
           controlsEndIndex = slidesCount - slidesCapacity,
           adaptive = Number(slider.dataset.sliderAdaptive),
-          windowWidth = window.innerWidth
+          windowWidth = window.innerWidth,
+          progressBar = slider.querySelector('[data-slider-progress]'),
+          progressStep = Math.round(100 / (slidesCount-slidesCapacity+1))
+
+    progressBar.style.width = `${progressStep}%`
 
     if (slidesCount > slidesCapacity) {
       slider.classList.add('slider_initial')
@@ -43,6 +46,9 @@
           .addEventListener('click', (e) => {
             e.preventDefault()
             flkty.next()
+            let progressCurrent = parseInt(progressBar.style.left) || 0
+            console.log(progressCurrent)
+            progressBar.style.left = `${progressCurrent+progressStep}%`
           })
 
         if (flkty.selectedIndex === 0) {
@@ -54,6 +60,12 @@
         flkty.on('select', (index) => {
           controlsPrev.disabled = (index == 0) ? true : false
           controlsNext.disabled = (index == controlsEndIndex) ? true : false
+        })
+
+        flkty.on('change', (index) => {
+          if (index >= controlsEndIndex) {
+            flkty.select(controlsEndIndex)
+          }
         })
       }
     }

@@ -16,6 +16,10 @@
   pointer-events: none;
   transition: all .32s;
 
+  &__header {
+    padding: 16px 24px;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -41,10 +45,6 @@
       &:hover,
       &:focus {
         color: @colorHighlight;
-
-        &::after {
-          background: @colorHighlight;
-        }
       }
 
       &:focus {
@@ -84,7 +84,17 @@
   width: 316px;
 }
 
-[data-drop-state] {
+.drop_pos-right {
+  left: auto;
+  right: 0;
+  transform: scale(.9);
+
+  &.show {
+    transform: scale(1);
+  }
+}
+
+[data-drop-arrow] {
   cursor: pointer;
 
   &::after {
@@ -110,14 +120,14 @@
   }
 }
 
-[data-drop-state="0"] {
+[data-drop-arrow][data-drop-state="0"] {
   &::after {
     margin-top: 4px;
     transform: translateY(-50%) rotate(135deg);
   }
 }
 
-[data-drop-state="1"] {
+[data-drop-arrow][data-drop-state="1"] {
   &::after {
     transform: translateY(-50%) rotate(-45deg);
   }

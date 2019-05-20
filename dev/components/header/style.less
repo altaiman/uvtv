@@ -1,4 +1,7 @@
 .header {
+  position: relative;
+  z-index: 3;
+
   &__container {
     position: relative;
   }
@@ -12,23 +15,31 @@
     color: @colorTextGray;
   }
 
-  &__menu {
-    .positionCenter-Y();
+  &__drop {
+    position: absolute;
+    top: 50%;
     right: 16px;
+    transform: translateY(-50%);
+    display: flex;
+  }
+
+  &__menu {
+    transform: scale(1);
     padding: 0;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background: @colorBackgroundGray;
     border: none;
-    transition: all .16s;
+    transition: all .32s;
 
     .ico {
       .positionCenter();
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &[data-drop-state="1"] {
       background: @colorHighlight;
       color: @colorTextLight;
     }
@@ -39,6 +50,8 @@
   }
 
   &__top {
+    position: relative;
+    z-index: 1;
     padding: 24px 0 25px;
   }
 

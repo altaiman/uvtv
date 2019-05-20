@@ -43,6 +43,7 @@ input[type=number] {
 	-moz-font-feature-settings: 'liga', 'kern';
 	color: @colorText;
 	min-width: 320px;
+	transition: all .64s;
 
 	*,
 	*::before,
@@ -64,6 +65,7 @@ input[type=number] {
 		height: 100%;
 		background: #FBFBFB;
 		border-right: 1px solid #F4F4F4;
+		transition: inherit;
 	}
 
 	&__modals {
@@ -72,8 +74,24 @@ input[type=number] {
 }
 
 .page_side {
-	.container {
-		left: 200px;
+	padding-left: 380px;
+	box-sizing: border-box;
+
+	.page {
+		&__content {
+			position: relative;
+
+			&::before {
+				position: absolute;
+				z-index: 99;
+				left: -10px;
+				top: 0;
+				width: 80px;
+				height: 100%;
+				content: '';
+				background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+			}
+		}
 	}
 }
 
