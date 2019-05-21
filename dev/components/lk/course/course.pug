@@ -1,0 +1,30 @@
+mixin lkCourse(data)
+  +b.A.lk-course(href="#")
+    +e.head
+      +e.block
+        +b.SPAN.subcaption Курс
+        +b.SPAN.caption= data.title
+      +e.block
+        //- +progress({
+        //-   value: data.progress.value,
+        //-   max: data.progress.max
+        //- })
+        
+mixin lkCourseDocs(data)
+  +b.DETAILS.lk-course._docs
+    +e.SUMMARY.head
+      +e.block
+        +b.SPAN.subcaption Курс
+        +b.SPAN.caption= data.title
+      +e.block
+        //- +e.P.text= data.docsCount + ( (Number(data.docsCount.toString().split('').pop()) == 1) ? ' документ' : (Number(data.docsCount.toString().split('').pop()) > 4 || Number(data.docsCount.toString().split('').pop()) == 0) ? ' документов' : ' документа' )
+    +e.main
+      +b.items._triple  
+        //- each doc in data.docs
+        //-   +doc({
+        //-     title: doc.title,
+        //-     filename: doc.filename,
+        //-     type: doc.type,
+        //-     size: doc.size
+        //-   })
+        //- 

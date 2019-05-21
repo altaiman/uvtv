@@ -55,8 +55,34 @@
     padding: 24px 0 25px;
   }
 
+  &__auth {
+    padding: 32px 0;
+    color: @colorTextLight;
+    background: #2196F3;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
   &__main {
+    position: relative;
     padding: 57px 0 58px;
     background: @colorBackgroundGray;
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      right: 80px;
+      bottom: -64px;
+      content: '';
+      width: 156px;
+      height: 220px;
+      background: url('../img/hand.svg') no-repeat;
+      pointer-events: none;
+      opacity: .25;
+    }
   }
 }

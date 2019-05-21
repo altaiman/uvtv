@@ -5,7 +5,7 @@ include components/svg/index.pug
 include components/header/index.pug
 include components/common/index.pug
 include components/side/index.pug
-include components/item/index.pug
+include components/lk/index.pug
 include components/footer/index.pug
 include components/footer/scripts.pug
 
@@ -14,7 +14,7 @@ include components/footer/scripts.pug
 //- variables page 
 - 
 	pageSettings = {
-		title: 'Все курсы',
+		title: 'Личный кабинет',
 		side: true
 	}
 	
@@ -26,7 +26,7 @@ html(lang=global.lang)
 	+b.BODY.page(class=pageSettings.side ? '_side' : '')
 		+header({
 			title: pageSettings.title,
-			auth: true
+			auth: false
 		})
 		
 		if (pageSettings.side)
@@ -35,15 +35,25 @@ html(lang=global.lang)
 		
 		+e.MAIN.content
 			+b.container
-				+b.UL.list._inline._items._items-double
+				+links([
+					{
+						name: 'Мои курсы',
+						href: '#',
+						active: true
+					},{
+						name: 'Документы',
+						href: '#'
+					},{
+						name: 'Профиль',
+						href: '#'
+					}
+				])
+				
+				+b.UL.list
 					+e.LI.item
-						+course_page
-					+e.LI.item
-						+course_page
-					+e.LI.item
-						+course_page
-					+e.LI.item
-						+course_page
+						+lkCourse({
+							title: 'Реальный франчайзинг'
+						})
 
 		+footer
 		

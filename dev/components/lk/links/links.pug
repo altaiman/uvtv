@@ -1,0 +1,6 @@
+mixin links(data)
+  +b.links
+    +e.UL.list
+      each item in data
+        +e.LI.item(class=item.active ? '_active' : '')
+          a(href=item.href)= item.name

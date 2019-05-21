@@ -34,7 +34,26 @@ mixin header(data)
                   a(href="#") Благотворительность
                 +e.LI.item
                   a(href="#") Сотрудничество
-          
+    - if (data.auth)    
+      +e.auth
+        +e.container.container
+          div
+            +b.H2.title Заголовок
+            +b.H3.caption._size-s Подзаголовок
+          div
+            +button({
+              type: 'button',
+              style: 1,
+              name: 'Вход',
+              size: 'wide'
+            })
+            +button({
+              type: 'button',
+              style: 1,
+              name: 'Регистрация',
+              size: 'wide'
+            })
+        
     +e.main
       +e.container.container
         +b.H2.title= data.title
