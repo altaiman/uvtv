@@ -1,10 +1,10 @@
 mixin item_course(data)
   +b.item._course(tabIndex="0")
-    +e.block._course(style="background-color: #E9EB7A;")
+    +e.block._course(style="background-color:"+data.background+";")
         
     +e.block._info
       +b.SPAN.subcaption Название курса
-      +b.SPAN.caption._size-s Yandex zen 80% дочитываний
+      +b.SPAN.caption._size-s= data.title
       +e.content
         +b.SPAN.caption._size-xs Базовый курс
         +b.UL.list

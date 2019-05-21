@@ -15,7 +15,8 @@ include components/footer/scripts.pug
 //- variables page 
 - 
 	pageSettings = {
-		title: 'Бондарев Андрей Евгеньевич'
+		title: 'Бондарев Андрей Евгеньевич',
+		side: true
 	}
 	
 //- end variables
@@ -23,13 +24,14 @@ include components/footer/scripts.pug
 doctype html
 html(lang=global.lang)
 	+head(pageSettings)
-	+b.BODY.page._side
+	+b.BODY.page(class=pageSettings.side ? '_side' : '')
 		+header({
 			title: pageSettings.title 
 		})
 		
-		+e.ASIDE.side
-			+side
+		if (pageSettings.side)
+			+e.ASIDE.side
+				+side
 		
 		+e.MAIN.content
 			+b.container
