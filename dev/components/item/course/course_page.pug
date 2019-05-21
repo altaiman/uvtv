@@ -36,32 +36,50 @@ mixin course_page(data)
       +e.block._image
         +e.image._speaker
           img(src='pictures/speaker-card.jpg' alt='')
+          img(src='pictures/speaker-card2.jpg' alt='')
           
       +e.block._info
-        +b.SPAN.subcaption Название курса
-        +b.SPAN.caption._size-s Yandex zen 80% дочитываний
+        +b.SPAN.subcaption Спикер
+        +b.SPAN.caption._size-s Бондарев  Андрей Евгеньевич
+        
         +e.content
-          +b.SPAN.caption._size-xs Базовый курс
           +b.UL.list
             +e.LI.item
-              +b.tag
-                +e.ico
-                  +svg({
-                    name: 'ico-play',
-                    size: [13,13]
-                  })
-                span 15 видеоуроков
+              +link({
+                name: 'Интервью со спикером',
+                href: '#',
+                size: 's',
+                ico: {
+                  name: 'ico-mic',
+                  sizeContainer: '_size-s'
+                }
+              })
             +e.LI.item
-              +b.tag
-                +e.ico
-                  +svg({
-                    name: 'ico-doc'
-                  })
-                span 6 инструкций
+              +link({
+                name: 'Полезные статьи',
+                href: '#',
+                size: 's',
+                ico: {
+                  name: 'ico-doc',
+                  sizeContainer: '_size-s'
+                }
+              })
+            +e.LI.item
+              +link({
+                name: 'Полезные видео',
+                href: '#',
+                size: 's',
+                ico: {
+                  name: 'ico-play',
+                  sizeContainer: '_size-s'
+                }
+              })
+              
         +e.footer
           +button({
             type: 'link',
-            name: 'Купить курс',
+            name: 'Об авторе',
             href: '#',
+            style: 0,
             size: 'full'
           })

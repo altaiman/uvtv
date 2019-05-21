@@ -2,7 +2,7 @@ include data.pug
 
 mixin link(data)
   - if (data.ico)
-    +b.A.link(href=data.href class=linkStyles[data.style])
+    +b.A.link(href=data.href class=linkStyles[data.style] class='_size-'+data.size)
       +e.ico.ico(class=data.ico.sizeContainer)
         +svg({
           name: data.ico.name,
