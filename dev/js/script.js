@@ -40,15 +40,16 @@
           .addEventListener('click', (e) => {
             e.preventDefault()
             flkty.previous()
+            // let progressCurrent = parseInt(progressBar.style.left) || 0
+            // progressBar.style.left = `${progressCurrent-progressStep}%`
           })
 
         controlsNext
           .addEventListener('click', (e) => {
             e.preventDefault()
             flkty.next()
-            let progressCurrent = parseInt(progressBar.style.left) || 0
-            console.log(progressCurrent)
-            progressBar.style.left = `${progressCurrent+progressStep}%`
+            // let progressCurrent = parseInt(progressBar.style.left) || 0
+            // progressBar.style.left = `${progressCurrent+progressStep}%`
           })
 
         if (flkty.selectedIndex === 0) {
@@ -58,8 +59,12 @@
         }
 
         flkty.on('select', (index) => {
+          let progressCurrent = parseInt(progressBar.style.left) || 0
+
           controlsPrev.disabled = (index == 0) ? true : false
           controlsNext.disabled = (index == controlsEndIndex) ? true : false
+
+          progressBar.style.left = `${progressStep*index}%`
         })
 
         flkty.on('change', (index) => {
