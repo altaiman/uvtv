@@ -305,11 +305,22 @@
     &__item {
       margin: 0 0 40px;
     }
+
+    &__item_double {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      & > * {
+        width: calc(~'50% - 15px');
+      }
+    }
   }
 }
 
 .list_items-double {
   justify-content: space-between;
+  align-items: flex-start;
 
   & > .list {
     &__item {
@@ -321,3 +332,19 @@
 @import url('video/style.less');
 @import url('article/style.less');
 @import url('course/style.less');
+
+.item_size-l {
+  .item {
+    &__title {
+      margin: 0;
+      max-width: 300px;
+      font-size: @fontSizeCaptionS;
+      height: 56px;
+      line-height: 1.4;
+    }
+
+    &__text {
+      margin-bottom: 16px;
+    }
+  }
+}

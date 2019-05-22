@@ -1,5 +1,7 @@
+include data.pug
+
 mixin item_article(data)
-  +b.A.item._article(href="#")
+  +b.A.item._article(href="#" class=data.size ? '_size-'+data.size : '')
     +e.DIV.block
       +e.H4.title= data.title
       +e.DIV.text
