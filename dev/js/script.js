@@ -141,17 +141,25 @@
     return result;
   }
 
+  function starFocus(star) {
+    star.classList.add('star_hover')
+
+    prevAll(star).forEach((el, k) => {
+      el.classList.add('star_hover')
+    })
+
+    nextAll(star).forEach((el, k) => {
+      el.classList.remove('star_hover')
+    })
+  }
+
   document.querySelectorAll('.star').forEach((star, i) => {
     star.addEventListener('mouseenter', (e) => {
-      star.classList.add('star_hover')
+      starFocus(star)
+    })
 
-      prevAll(star).forEach((el, k) => {
-        el.classList.add('star_hover')
-      })
-
-      nextAll(star).forEach((el, k) => {
-        el.classList.remove('star_hover')
-      })
+    star.addEventListener('focus', (e) => {
+      starFocus(star)
     })
 
     star.addEventListener('mouseleave', (e) => {
@@ -171,6 +179,13 @@
       nextAll(star).forEach((el, k) => {
         el.classList.remove('star_fill')
       })
+    })
+
+    star.addEventListener('keydown', (e) => {
+      if (e.keyCode === 13) {
+        e.preventDefault()
+        star.click()
+      }
     })
   })
 

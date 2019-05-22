@@ -44,6 +44,8 @@
   padding: 0 14px;
   cursor: pointer;
   transform-origin: center;
+  background: none;
+  border: none;
   transition: all .16s;
 
   svg {
@@ -56,7 +58,12 @@
     transition: all .16s;
   }
 
-  &:hover {
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus {
     transform: scale(1.2);
 
     & ~ .star_fill {

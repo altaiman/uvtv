@@ -7,7 +7,7 @@ mixin rating(value)
       +b.SPAN Оцените статью
     +e.UL.stars(data-stars="7" data-before="Так себе" data-after="Отличная")
       while n < 10
-        +b.LI.star
+        +b.LI.star(tabIndex="0")
           +svg({
             name: 'ico-star'
           })
