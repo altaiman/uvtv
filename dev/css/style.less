@@ -82,16 +82,16 @@ input[type=number] {
 		&__content {
 			position: relative;
 
-			&::before {
-				position: absolute;
-				z-index: 99;
-				left: -10px;
-				top: 0;
-				width: 80px;
-				height: 100%;
-				content: '';
-				background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-			}
+			// &::before {
+			// 	position: absolute;
+			// 	z-index: 99;
+			// 	left: -10px;
+			// 	top: 0;
+			// 	width: 80px;
+			// 	height: 100%;
+			// 	content: '';
+			// 	background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+			// }
 		}
 	}
 }
@@ -105,6 +105,12 @@ input[type=number] {
 	padding-left: 16px;
 	padding-right: 16px;
 	transition: all .32s;
+
+	&__line {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
 }
 
 .container_flex {
@@ -113,7 +119,24 @@ input[type=number] {
 }
 
 .content {
+	line-height: 1.4;
 
+	h3 {
+		display: block;
+		font-size: @fontSizeCaptionS;
+		margin: 0 0 28px;
+	}
+
+	p {
+		margin: 0 0 28px;
+		text-indent: 24px;
+	}
+
+	img {
+		margin: 32px 0 56px;
+		border-radius: 10px;
+		width: 100%;
+	}
 }
 
 .component {

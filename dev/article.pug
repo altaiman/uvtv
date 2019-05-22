@@ -1,0 +1,58 @@
+//- includes
+include components/head/index.pug
+include components/svg/index.pug
+
+include components/header/index.pug
+include components/common/index.pug
+include components/side/index.pug
+include components/slider/index.pug
+include components/item/index.pug
+include components/footer/index.pug
+include components/footer/scripts.pug
+
+//- end includes
+
+//- variables page 
+- 
+	pageSettings = {
+		title: 'Как управлять репутацией бизнеса в сети',
+		side: true
+	}
+	
+//- end variables
+
+doctype html
+html(lang=global.lang)
+	+head(pageSettings)
+	+b.BODY.page(class=pageSettings.side ? '_side' : '')
+		+header({
+			title: pageSettings.title 
+		})
+		
+		if (pageSettings.side)
+			+e.ASIDE.side
+				+side
+		
+		+e.MAIN.content
+			+b.container
+				+article
+				
+				+e.line
+					+b.A.button._light(href="articles.html")
+						+e.DIV.ico.ico._reverse
+							+svg({
+								name: 'ico-arrow'
+							})
+						span Назад к списку статей
+						
+					+b.A.button._light(href="article.html")
+						span Следующая статья
+						+e.DIV.ico.ico
+							+svg({
+								name: 'ico-arrow'
+							})
+						
+						
+		+footer
+		
+		+scripts

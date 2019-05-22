@@ -1,0 +1,30 @@
+mixin share(mod)
+  +b.share(class='_'+mod)
+    span Поделитесь статьей и поддержите нас:
+    +e.UL.list
+      +e.LI.item
+        +b.A.social(href="#" style="background-color: #4A76A8;")
+          +b.ico
+            +svg({
+              name: 'ico-social-vk'
+            })
+          +e.count
+            span 12
+            
+      +e.LI.item
+        +b.A.social(href="#" style="background-color: #4267B2;")
+          +b.ico
+            +svg({
+              name: 'ico-social-fb'
+            })
+          +e.count
+            span 568
+            
+      +e.LI.item
+        +b.A.social(href="#" style="background-color: #1DA1F1;")
+          +b.ico
+            +svg({
+              name: 'ico-social-tw'
+            })
+          +e.count
+            span 12

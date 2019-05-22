@@ -1,0 +1,14 @@
+- 
+  var n = 0
+
+mixin rating(value)
+  +b.rating
+    +e.title
+      +b.SPAN Оцените статью
+    +e.UL.stars(data-stars="7" data-before="Так себе" data-after="Отличная")
+      while n < 10
+        +b.LI.star
+          +svg({
+            name: 'ico-star'
+          })
+        - n++

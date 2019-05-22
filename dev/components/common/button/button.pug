@@ -2,14 +2,36 @@ include data.pug
 
 mixin button(data)
   - if (data.type == 'button')
-    +b.BUTTON.button(
-      class=((data.size) ? `_size-${data.size}` : '') 
-      class=buttonStyles[data.style])
-      span= data.name
-      
+    - if (data.ico)
+      +b.BUTTON.button(
+        class=((data.size) ? `_size-${data.size}` : '') 
+        class=buttonStyles[data.style])
+        +e.DIV.ico.ico(class=data.ico.sizeContainer)
+          +svg({
+            name: data.ico.name,
+            size: data.ico.size
+          })
+        span= data.name
+    - else
+      +b.BUTTON.button(
+        class=((data.size) ? `_size-${data.size}` : '') 
+        class=buttonStyles[data.style])
+        span= data.name
   - else if (data.type == 'link')
-    +b.A.button(
-      class=((data.size) ? `_size-${data.size}` : '') 
-      class=buttonStyles[data.style] 
-      href=data.href)
-      span= data.name
+    - if (data.ico)
+      +b.A.button(
+        class=((data.size) ? `_size-${data.size}` : '') 
+        class=buttonStyles[data.style] 
+        href=data.href)
+        +e.DIV.ico.ico(class=data.ico.sizeContainer)
+          +svg({
+            name: data.ico.name,
+            size: data.ico.size
+          })
+        span= data.name
+    - else
+      +b.A.button(
+        class=((data.size) ? `_size-${data.size}` : '') 
+        class=buttonStyles[data.style] 
+        href=data.href)
+        span= data.name

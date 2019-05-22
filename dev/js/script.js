@@ -40,16 +40,12 @@
           .addEventListener('click', (e) => {
             e.preventDefault()
             flkty.previous()
-            // let progressCurrent = parseInt(progressBar.style.left) || 0
-            // progressBar.style.left = `${progressCurrent-progressStep}%`
           })
 
         controlsNext
           .addEventListener('click', (e) => {
             e.preventDefault()
             flkty.next()
-            // let progressCurrent = parseInt(progressBar.style.left) || 0
-            // progressBar.style.left = `${progressCurrent+progressStep}%`
           })
 
         if (flkty.selectedIndex === 0) {
@@ -117,44 +113,105 @@
     })
   })
 
-  // modals
-  document.querySelectorAll('[data-modal-open]').forEach((trigger, i) => {
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault()
+  // rating
 
-      const t = e.target.closest('[data-modal-open]'),
-            data = t.dataset.modalOpen,
-            modalElement = document.querySelector(`[data-modal="${data}"]`)
+  document.querySelectorAll('.rating').forEach((rating, i) => {
+    const value = Number(rating.querySelector('[data-stars]').dataset.stars)
 
-      let modalContent = modalElement.innerHTML
-
-      if (data == 'gallery') {
-        modalContent = t.innerHTML
-      }
-
-      let modal = new tingle.modal({
-        closeMethods: ['overlay', 'escape'],
-        onClose: function() {
-          this.remove()
-        },
-        cssClass: modalElement.classList
-      });
-
-      modal.setContent(modalContent)
-      modal.open()
-
-      const forms = modal.modalBoxContent.querySelectorAll('form')
-
-      try {
-        document.querySelector('.modal__close').addEventListener('click', (e) => {
-          e.preventDefault()
-          modal.close()
-        })
-      } catch (e) {
-
+    rating.querySelectorAll('.star').forEach((star, k) => {
+      if (k < value) {
+        star.classList.add('star_fill')
       }
     })
   })
+
+  function prevAll(element) {
+    var result = [];
+
+    while (element = element.previousElementSibling)
+        result.push(element);
+    return result;
+  }
+
+  function nextAll(element) {
+    var result = [];
+
+    while (element = element.nextElementSibling)
+        result.push(element);
+    return result;
+  }
+
+  document.querySelectorAll('.star').forEach((star, i) => {
+    star.addEventListener('mouseenter', (e) => {
+      star.classList.add('star_hover')
+
+      prevAll(star).forEach((el, k) => {
+        el.classList.add('star_hover')
+      })
+
+      nextAll(star).forEach((el, k) => {
+        el.classList.remove('star_hover')
+      })
+    })
+
+    star.addEventListener('mouseleave', (e) => {
+      document.querySelectorAll('.star_hover').forEach((el, k) => {
+        el.classList.remove('star_hover')
+      })
+    })
+
+    star.addEventListener('click', (e) => {
+      e.preventDefault()
+      star.classList.add('star_fill')
+
+      prevAll(star).forEach((el, k) => {
+        el.classList.add('star_fill')
+      })
+
+      nextAll(star).forEach((el, k) => {
+        el.classList.remove('star_fill')
+      })
+    })
+  })
+
+  // modals
+  // document.querySelectorAll('[data-modal-open]').forEach((trigger, i) => {
+  //   trigger.addEventListener('click', (e) => {
+  //     e.preventDefault()
+  //
+  //     const t = e.target.closest('[data-modal-open]'),
+  //           data = t.dataset.modalOpen,
+  //           modalElement = document.querySelector(`[data-modal="${data}"]`)
+  //
+  //     let modalContent = modalElement.innerHTML
+  //
+  //     if (data == 'gallery') {
+  //       modalContent = t.innerHTML
+  //     }
+  //
+  //     let modal = new tingle.modal({
+  //       closeMethods: ['overlay', 'escape'],
+  //       onClose: function() {
+  //         this.remove()
+  //       },
+  //       cssClass: modalElement.classList
+  //     });
+  //
+  //     modal.setContent(modalContent)
+  //     modal.open()
+  //
+  //     const forms = modal.modalBoxContent.querySelectorAll('form')
+  //
+  //     try {
+  //       document.querySelector('.modal__close').addEventListener('click', (e) => {
+  //         e.preventDefault()
+  //         modal.close()
+  //       })
+  //     } catch (e) {
+  //
+  //     }
+  //   })
+  // })
 
 
 })(window);
