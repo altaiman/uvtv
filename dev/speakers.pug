@@ -25,7 +25,8 @@ html(lang=global.lang)
 	+head(pageSettings)
 	+b.BODY.page(class=pageSettings.side ? '_side' : '')
 		+header({
-			title: pageSettings.title 
+			title: pageSettings.title,
+			select: true
 		})
 		
 		if (pageSettings.side)

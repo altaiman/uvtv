@@ -189,6 +189,16 @@
     })
   })
 
+  // select
+  $('select').niceSelect();
+
+  // select
+  // document.querySelectorAll('select').forEach((select, i) => {
+  //   new CustomSelect({
+  //     elem: select
+  //   });
+  // })
+
   // modals
   // document.querySelectorAll('[data-modal-open]').forEach((trigger, i) => {
   //   trigger.addEventListener('click', (e) => {

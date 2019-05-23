@@ -13,6 +13,7 @@
   border-radius: 5px;
   border: 1px solid @colorBackgroundGray;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transition: all .32s;
 
@@ -75,6 +76,7 @@
   &.show {
     margin-top: 8px;
     opacity: 1;
+    visibility: visible;
     pointer-events: initial;
     transform: translateX(-50%) scale(1);
   }

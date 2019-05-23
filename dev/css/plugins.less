@@ -1,3 +1,80 @@
 @pluginsPath: 'plugins';
 
 @import url('@{pluginsPath}/tingle.min.less');
+@import url('@{pluginsPath}/nice-select.less');
+
+.select {
+  padding: 0 56px 0 24px;
+  max-width: 100%;
+  width: 540px;
+  height: 56px;
+  font-size: @fontSizeDefault;
+  font-weight: 500;
+  line-height: 54px;
+  border: 1px solid @colorTextGray;
+
+  .list {
+    width: 100%;
+
+    li {
+      padding: 0 24px;
+
+      &:hover {
+        color: @colorHighlight;
+        background: none;
+      }
+
+      &.disabled {
+        display: none;
+      }
+
+      &.focus {
+        color: @colorHighlight;
+      }
+
+      &.selected {
+        color: @colorTextLight;
+        background: @colorHighlight;
+
+        &.focus {
+          background: @colorHighlight;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    border: 1px solid @colorHighlight;
+
+    &::after {
+      border-color: @colorHighlight;
+    }
+  }
+
+  &::after {
+    .positionCenter-Y();
+    right: 24px;
+    margin-top: -5px;
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-bottom: 2px solid @colorTextGray;
+    border-left: 2px solid @colorTextGray;
+    transform: rotate(-45deg);
+    transform-origin: center;
+  }
+
+  &.open {
+    border: 1px solid @colorHighlight;
+
+    &::after {
+      margin-top: -1px;
+      transform: scaleY(-1) rotate(-45deg);
+      border-color: @colorHighlight;
+    }
+  }
+}
+
+.nice-select .list:hover .option.selected:not(:hover) {
+  background: @colorHighlight !important;
+}

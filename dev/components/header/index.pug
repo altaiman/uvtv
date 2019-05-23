@@ -1,5 +1,6 @@
 include ../global.pug
 include ../breadcrumbs/index.pug
+include ../select/index.pug
 
 mixin header(data)
   +b.HEADER.header
@@ -56,11 +57,34 @@ mixin header(data)
         
     +e.main
       +e.container.container
-        +b.H2.title= data.title
-        +breadcrumbs([
-          {
-            name: 'Текущая страница',
-            href: '#'
-          }
-        ])
-  
+        - if (data.select)
+            div
+              +b.H2.title= data.title
+              +breadcrumbs([
+                {
+                  name: 'Текущая страница',
+                  href: '#'
+                }
+              ])
+              
+            div
+              +select({
+                title: 'Сфера деятельности',
+                options: [
+                  { title: 'Сфера 1' },
+                  { title: 'Сфера 2' },
+                  { title: 'Сфера 3' },
+                  { title: 'Сфера 4' },
+                  { title: 'Сфера 5' }
+                ]
+              })
+              
+        - else
+          div
+            +b.H2.title= data.title
+            +breadcrumbs([
+              {
+                name: 'Текущая страница',
+                href: '#'
+              }
+            ])

@@ -3,12 +3,18 @@
   margin: 0 auto;
   width: 121px;
   height: 60px;
+  transition: all .16s;
 
   svg,
   img {
     max-width: 100%;
     max-height: 100%;
     pointer-events: none;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px @colorHighlight;
   }
 }
 

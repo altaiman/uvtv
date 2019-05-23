@@ -26,7 +26,8 @@ html(lang=global.lang)
 	+b.BODY.page(class=pageSettings.side ? '_side' : '')
 		+header({
 			title: pageSettings.title,
-			auth: false
+			auth: false,
+			select: true
 		})
 		
 		if (pageSettings.side)

@@ -1,0 +1,6 @@
+mixin select(data)
+  +b.SELECT.select
+    +e.OPTION(selected disabled)= data.title
+    each option in data.options
+      +e.OPTION= option.title
+    
