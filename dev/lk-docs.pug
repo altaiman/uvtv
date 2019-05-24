@@ -1,0 +1,67 @@
+//- includes
+include components/head/index.pug
+include components/svg/index.pug
+
+include components/header/index.pug
+include components/common/index.pug
+include components/side/index.pug
+include components/lk/index.pug
+include components/footer/index.pug
+include components/footer/scripts.pug
+
+//- end includes
+
+//- variables page 
+- 
+	pageSettings = {
+		title: 'Личный кабинет',
+		side: true
+	}
+	
+//- end variables
+
+doctype html
+html(lang=global.lang)
+	+head(pageSettings)
+	+b.BODY.page(class=pageSettings.side ? '_side' : '')
+		+header({
+			title: pageSettings.title,
+			auth: false
+		})
+		
+		if (pageSettings.side)
+			+e.ASIDE.side
+				+side
+		
+		+e.MAIN.content
+			+b.container
+				+links([
+					{
+						name: 'Мои курсы',
+						href: '#',
+						active: true
+					},{
+						name: 'Документы',
+						href: '#'
+					},{
+						name: 'Профиль',
+						href: '#'
+					}
+				])
+				
+				+b.UL.list
+					each item in lkCoursesData
+						+e.LI.item
+							+lkCourseDocs({
+								title: item.title,
+								progress: {
+									value: item.progress.value,
+									max: item.progress.max
+								},
+								docsCount: item.docsCount || 0,
+								docs: item.docs
+							})
+
+		+footer
+		
+		+scripts

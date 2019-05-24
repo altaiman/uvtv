@@ -1,0 +1,41 @@
+.doc {
+  position: relative;
+  display: block;
+  padding: 24px;
+  color: @colorText;
+  background: @colorBackgroundLight;
+  border-radius: 5px;
+
+  .caption {
+    margin: 0;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+  }
+
+  &__info {
+    padding-left: 52px;
+  }
+
+  &__ico {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 36px;
+    height: 36px;
+
+    img,
+    svg {
+      .positionCenter();
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .list_inline {
+    &:last-child {
+      margin-bottom: -8px;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 .links {
   margin: 0 0 50px;
-  
+
   &__list {
     position: relative;
     display: flex;
@@ -35,7 +35,12 @@
       text-decoration: none;
       transition: all .16s;
 
-      &:hover {
+      &:focus {
+        outline: none;
+      }
+
+      &:hover,
+      &:focus {
         color: @colorHighlight;
       }
 

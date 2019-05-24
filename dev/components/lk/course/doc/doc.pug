@@ -1,0 +1,30 @@
+mixin doc(data)
+  +b.doc
+    +e.ico
+      img(src=global.paths.images+'icons/files/pdf.svg' alt="PDF")
+    +e.info
+      +e.title
+        +b.SPAN.caption._size-s= data.title
+        +b.SPAN.subcaption= data.size + ' Мб, .' + data.type
+      +b.UL.list._inline
+        +e.LI.item
+          +link({
+            name: 'Скачать',
+            href: '#',
+            size: 's',
+            ico: {
+              name: 'ico-download',
+              sizeContainer: '_size-s'
+            }
+          })
+          
+        +e.LI.item
+          +link({
+            name: 'Просмотр',
+            href: '#',
+            size: 's',
+            ico: {
+              name: 'ico-eye',
+              sizeContainer: '_size-s'
+            }
+          })
