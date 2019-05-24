@@ -1,0 +1,31 @@
+@import url('progress/style.less');
+
+.lk-course {
+  display: block;
+  width: 100%;
+  padding: 24px;
+  margin: 0 0 8px;
+  color: @colorTextLight;
+  text-decoration: none;
+  background: @colorLink;
+  border-radius: 5px;
+
+  .subcaption {
+    color: currentColor;
+  }
+
+  &__head {
+    display: flex;
+
+    .caption {
+      padding-right: 32px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  &__block {
+    width: 50%;
+  }
+}

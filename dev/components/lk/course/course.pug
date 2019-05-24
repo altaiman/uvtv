@@ -1,14 +1,17 @@
+include progress/progress.pug
+
 mixin lkCourse(data)
   +b.A.lk-course(href="#")
-    +e.head
-      +e.block
+    +e.DIV.head
+      +e.DIV.block
         +b.SPAN.subcaption Курс
-        +b.SPAN.caption= data.title
-      +e.block
-        //- +progress({
-        //-   value: data.progress.value,
-        //-   max: data.progress.max
-        //- })
+        +b.SPAN.caption(title=data.title)= data.title
+      +e.DIV.block
+        +b.SPAN.subcaption Уроки
+        +progress({
+          value: data.progress.value,
+          max: data.progress.max
+        })
         
 mixin lkCourseDocs(data)
   +b.DETAILS.lk-course._docs

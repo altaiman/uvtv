@@ -50,10 +50,15 @@ html(lang=global.lang)
 				])
 				
 				+b.UL.list
-					+e.LI.item
-						+lkCourse({
-							title: 'Реальный франчайзинг'
-						})
+					each item in lkCoursesData
+						+e.LI.item
+							+lkCourse({
+								title: item.title,
+								progress: {
+									value: item.progress.value,
+									max: item.progress.max
+								}
+							})
 
 		+footer
 		
