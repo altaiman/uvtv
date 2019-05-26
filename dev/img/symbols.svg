@@ -12,8 +12,24 @@
     <path fill-rule="evenodd" d="M14.34 11l-1.41-1.53 3.24-3.3H0V4.26h16.17l-3.24-2.97L14.34 0 20 5.25 14.34 11z" clip-rule="evenodd"/>
   </symbol>
 
+  <symbol id="svg-ico-edit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <g clip-path="url(#clip0)">
+      <path d="M22.15 15.08a.6.6 0 0 0-.6.6v5.3c0 1-.8 1.8-1.79 1.8H2.99c-1 0-1.8-.8-1.8-1.8V5.41c0-1 .8-1.8 1.8-1.8h5.3a.6.6 0 1 0 0-1.2H3a3 3 0 0 0-2.99 3v15.57a3 3 0 0 0 2.99 2.99h16.77a3 3 0 0 0 2.99-2.99v-5.3a.6.6 0 0 0-.6-.6z"/>
+      <path d="M22.51.88a2.69 2.69 0 0 0-3.8 0L8.04 11.54a.6.6 0 0 0-.15.27l-1.4 5.06a.6.6 0 0 0 .73.73l5.07-1.4a.6.6 0 0 0 .26-.15L23.21 5.38a2.7 2.7 0 0 0 0-3.8l-.7-.7zM9.35 11.93l8.72-8.73 2.82 2.82-8.73 8.73-2.81-2.82zm-.57 1.13l2.25 2.25-3.1.86.85-3.11zm13.59-8.52l-.64.63-2.81-2.81.63-.64a1.5 1.5 0 0 1 2.12 0l.7.7a1.5 1.5 0 0 1 0 2.12z"/>
+    </g>
+    <defs>
+      <clipPath id="clip0">
+        <path d="M0 0h24v24H0z"/>
+      </clipPath>
+    </defs>
+  </symbol>
+
   <symbol id="svg-ico-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 34">
     <path stroke-linecap="round" stroke-linejoin="round" d="M15.31 2.45a3 3 0 0 1 5.38 0l3.49 7.07 7.8 1.14a3 3 0 0 1 1.67 5.12L28 21.28l1.33 7.77a3 3 0 0 1-4.35 3.16L18 28.54l-6.98 3.67a3 3 0 0 1-4.35-3.16L8 21.28l-5.65-5.5a3 3 0 0 1 1.66-5.12l7.81-1.14 3.49-7.07z"/>
+  </symbol>
+
+  <symbol id="svg-ico-photo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 34">
+    <path fill-rule="evenodd" d="M22 9a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 17a7 7 0 1 1 0-14 7 7 0 0 1 0 14zM41 6h-7.4l-3.1-4.66A3 3 0 0 0 28 0H16a2.99 2.99 0 0 0-2.5 1.34L10.39 6H10V5a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v1a3 3 0 0 0-3 3v22a3 3 0 0 0 3 3h38a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3zM6 5h1v1H6V5zm35 26H3V9h9l4-6h12l4 6h9v22zm-5.5-16a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" clip-rule="evenodd"/>
   </symbol>
 
   <symbol id="svg-ico-mail" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 12">

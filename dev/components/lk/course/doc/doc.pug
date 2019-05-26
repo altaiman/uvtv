@@ -4,7 +4,7 @@ mixin doc(data)
       img(src=global.paths.images+'icons/files/pdf.svg' alt="PDF")
     +e.info
       +e.title
-        +b.SPAN.caption._size-s= data.title
+        +b.SPAN.caption._size-s(title=data.title)= data.title
         +b.SPAN.subcaption= data.size + ' Мб, .' + data.type
       +b.UL.list._inline
         +e.LI.item

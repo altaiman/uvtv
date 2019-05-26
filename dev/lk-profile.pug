@@ -1,0 +1,115 @@
+//- includes
+include components/head/index.pug
+include components/svg/index.pug
+
+include components/header/index.pug
+include components/common/index.pug
+include components/side/index.pug
+include components/form/index.pug
+include components/lk/index.pug
+include components/footer/index.pug
+include components/footer/scripts.pug
+
+//- end includes
+
+//- variables page 
+- 
+	pageSettings = {
+		title: 'Личный кабинет',
+		side: true
+	}
+	
+//- end variables
+
+doctype html
+html(lang=global.lang)
+	+head(pageSettings)
+	+b.BODY.page(class=pageSettings.side ? '_side' : '')
+		+header({
+			title: pageSettings.title,
+			auth: false
+		})
+		
+		if (pageSettings.side)
+			+e.ASIDE.side
+				+side
+		
+		+e.MAIN.content
+			+b.container
+				+links([
+					{
+						name: 'Мои курсы',
+						href: '#'
+					},{
+						name: 'Документы',
+						href: '#'
+					},{
+						name: 'Профиль',
+						href: '#',
+						active: true
+					}
+				])
+				
+				+b.FORM.form._size-m(id="profile")
+					+e.block
+						+b.SPAN.caption._size-s Личная информация
+						+b.upload
+							+e.photo
+								input(type="file")
+								+svg({
+									name: 'ico-photo',
+									size: [44,34]
+								})
+							+e.text
+								p Добавьте изображение профиля (не больше 5 мб)
+						+field({
+							name: 'Имя',
+							type: 'text',
+							edit: true,
+							value: 'Иван'
+						})
+						+field({
+							name: 'Фамилия',
+							type: 'text',
+							edit: true,
+							value: 'Иванов'
+						})
+						+field({
+							name: 'Дата рождения',
+							type: 'date',
+							value: '2001-01-31',
+							edit: true
+						})
+						+field({
+							name: 'Пароль',
+							type: 'password',
+							edit: true,
+							value: 'password'
+						})
+						
+					+e.block
+						+b.SPAN.caption._size-s Контактная информация
+						+field({
+							name: 'Телефон',
+							type: 'text',
+							edit: true,
+							value: '+7 (923) 391 123 32 00'
+						})
+						+field({
+							name: 'Почта',
+							type: 'email',
+							edit: true,
+							value: 'example@mail.ru'
+						})
+						+field({
+							name: 'Город',
+							type: 'text',
+							edit: true,
+							value: 'Барнаул'
+						})
+				
+				
+
+		+footer
+		
+		+scripts

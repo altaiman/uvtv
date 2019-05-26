@@ -1,0 +1,62 @@
+@import url('field/style.less');
+
+.form {
+  .caption {
+    text-align: center;
+    margin: 0 0 40px;
+  }
+
+  &__block {
+    margin-bottom: 56px;
+  }
+}
+
+.form_size-m {
+  width: 540px;
+  margin: 0 auto;
+}
+
+.upload {
+  display: flex;
+  align-items: center;
+  margin: 56px 0;
+  text-align: left;
+
+  &__photo {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    color: #66717F;
+    background: @colorBackgroundGray;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .16s;
+
+    input {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    &:hover {
+      color: @colorHighlight;
+    }
+
+    svg {
+      .positionCenter();
+      pointer-events: none;
+      fill: currentColor;
+    }
+  }
+
+  &__text {
+    width: calc(~'100% - 160px');
+    padding: 0 30px;
+    line-height: 1.5;
+  }
+}
