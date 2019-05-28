@@ -29,7 +29,21 @@
       margin-top: 8px;
       content: attr(value) ' / ' attr(max);
       font-size: @fontSizeLabel;
+      text-transform: uppercase;
       font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+.progress_percent {
+  .progress {
+    &__bar {
+      &::after {
+        right: auto;
+        left: 0;
+        content: 'Пройдено: ' attr(value) '%';
+      }
     }
   }
 }

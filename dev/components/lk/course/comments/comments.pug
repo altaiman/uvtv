@@ -1,0 +1,17 @@
+mixin comments
+  +b.comments
+    +e.FORM.form
+      +e.side
+        +e.author
+          img(src=global.paths.pictures+'photo.jpg' alt="Юрий Колесников")
+      +e.content
+        +b.FORM.form
+          +textarea({
+            placeholder: 'Ваш комментарий'
+          })
+          +e.submit
+            +button({
+              type: 'button',
+              name: 'Отправить',
+              size: 'wide'
+            })

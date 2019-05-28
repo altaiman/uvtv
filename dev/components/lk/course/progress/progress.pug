@@ -1,3 +1,7 @@
 mixin progress(data)
   +b.progress
     +e.PROGRESS.bar(value=data.value max=data.max)
+
+mixin progressPercent(percent)
+  +b.progress._percent
+    +e.PROGRESS.bar(value=percent max="100")

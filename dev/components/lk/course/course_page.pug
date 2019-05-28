@@ -1,0 +1,49 @@
+include progress/progress.pug
+include module/module.pug
+include rating/rating.pug
+include comments/comments.pug
+include ../../form/index.pug
+
+mixin lkCoursePage(data)
+  +b.course
+    +e.side
+      +e.title
+        +b.SPAN.subcaption Курс
+        +b.SPAN.caption._size-s= data.title
+        +progressPercent(data.progress.percent)
+      +e.modules(data-simplebar)
+        +module(data.modules)
+              
+    +e.main
+      +b.SPAN.caption Поэтапный разбор франшизы
+      +e.player
+      +e.content
+        +b.content
+          h3 Задание
+          ol
+            li Ознакомьтесь с файлом “Глоссарий основных терминов”, чтобы понимать терминологию этого курса. 
+            li Ознакомьтесь с файлом “Глоссарий основных терминов”, чтобы понимать терминологию этого курса. 
+            li Ознакомьтесь с файлом “Глоссарий основных терминов”, чтобы понимать терминологию этого курса. 
+            li Ознакомьтесь с файлом “Глоссарий основных терминов”, чтобы понимать терминологию этого курса. 
+      
+      +b.SPAN.caption._size-s Файлы для скачивания
+      +b.list._inline
+        each doc in data.docs
+          +e.item
+            +doc({
+              title: doc.title,
+              filename: doc.filename,
+              type: doc.type,
+              size: doc.size,
+              style: '_gray'
+            })
+      
+      +e.rating
+        +rating(7)
+        
+      +b.SPAN.caption._size-s Комментарии
+      
+      +comments
+          
+      
+      

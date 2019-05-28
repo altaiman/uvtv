@@ -1,0 +1,11 @@
+mixin module(data)
+  each module, i in data
+    +b.module
+      +e.header
+        +b.SPAN.subcaption= 'Модуль ' + (i+1)
+        +e.SPAN.title= module.title
+      +e.UL.list
+        each lesson, k in module.lessons
+          +e.LI.item(class=lesson.current ? '_current' : '')
+            +b.SPAN.subcaption= 'Урок ' + (k+1)
+            +e.SPAN.title= lesson.title

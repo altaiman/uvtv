@@ -42,8 +42,7 @@ input[type=number] {
 	-moz-osx-font-smoothing: grayscale;
 	-moz-font-feature-settings: 'liga', 'kern';
 	color: @colorText;
-	// min-width: 320px;
-	min-width: @container;
+	min-width: 320px;
 	transition: all .64s;
 
 	*,
@@ -136,6 +135,32 @@ input[type=number] {
 		margin: 32px 0 56px;
 		border-radius: 10px;
 		width: 100%;
+	}
+
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		counter-reset: item;
+		line-height: 1.5;
+
+		li {
+			position: relative;
+			padding: 0 0 0 24px;
+			margin: 0 0 16px;
+			counter-increment: item;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				content: counter(item)'.';
+			}
+
+			&:last-child {
+				margin: 0 0 8px;
+			}
+		}
 	}
 }
 

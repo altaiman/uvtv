@@ -2,10 +2,10 @@
   var n = 0
 
 mixin rating(value)
-  +b.rating
+  +b.rating._lesson
     +e.title
-      +b.SPAN Оцените статью
-    +e.UL.stars(data-stars=value data-before="Так себе" data-after="Отличная")
+      +b.SPAN Оцените лекцию
+    +e.UL.stars(data-stars=value data-before="Непонятно" data-after="Понятно")
       while n < 10
         +b.LI.star(tabIndex="0")
           +svg({

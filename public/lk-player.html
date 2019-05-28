@@ -62,7 +62,7 @@
       </div>
     </header>
     <aside class="page__side">
-      <aside class="side">
+      <div class="side">
         <div class="side__content">
           <div class="side__block"><a class="logotype logotype_side" href="index.html" title="Видеокурсы которые делают вашу жизнь лучше!"><img src="img/uvtv-logotype.svg" alt="ЮВTV"/></a>
           </div>
@@ -135,70 +135,93 @@
             </li>
           </ul>
         </div>
-      </aside>
+      </div>
     </aside>
     <main class="page__content" role="main">
       <div class="container">
         <div class="links">
           <ul class="links__list">
-            <li class="links__item links__item_active"><a href="#">Мои курсы</a>
+            <li class="links__item"><a href="#">Мои курсы</a>
             </li>
             <li class="links__item"><a href="#">Документы</a>
             </li>
-            <li class="links__item"><a href="#">Профиль</a>
+            <li class="links__item links__item_active"><a href="#">Профиль</a>
             </li>
           </ul>
         </div>
-        <ul class="list">
-          <li class="list__item"><a class="lk-course" href="#">
-            <div class="lk-course__head">
-              <div class="lk-course__block lk-course__block_title"><span class="subcaption">Курс</span><span class="caption" title="Реальный франчайзинг">Реальный франчайзинг</span>
+        <form class="form form_size-m" id="profile">
+          <div class="form__block"><span class="caption caption_size-s">Личная информация</span>
+            <div class="upload">
+              <div class="upload__photo">
+                <input type="file">
+                <svg width="44" height="34">
+                  <use xlink:href="img/symbols.svg#svg-ico-photo"></use>
+                </svg>
               </div>
-              <div class="lk-course__block"><span class="subcaption">Уроки</span>
-                <div class="progress">
-                  <progress class="progress__bar" value="17" max="24">
-                  </progress>
-                </div>
+              <div class="upload__text">
+                <p>Добавьте изображение профиля (не больше 5 мб)</p>
               </div>
-            </div></a>
-          </li>
-          <li class="list__item"><a class="lk-course" href="#">
-            <div class="lk-course__head">
-              <div class="lk-course__block lk-course__block_title"><span class="subcaption">Курс</span><span class="caption" title="Реальный инстаграм 2.0">Реальный инстаграм 2.0</span>
-              </div>
-              <div class="lk-course__block"><span class="subcaption">Уроки</span>
-                <div class="progress">
-                  <progress class="progress__bar" value="1" max="58">
-                  </progress>
-                </div>
-              </div>
-            </div></a>
-          </li>
-          <li class="list__item"><a class="lk-course" href="#">
-            <div class="lk-course__head">
-              <div class="lk-course__block lk-course__block_title"><span class="subcaption">Курс</span><span class="caption" title="ВКонтакте: Быстрый старт">ВКонтакте: Быстрый старт</span>
-              </div>
-              <div class="lk-course__block"><span class="subcaption">Уроки</span>
-                <div class="progress">
-                  <progress class="progress__bar" value="0" max="25">
-                  </progress>
-                </div>
-              </div>
-            </div></a>
-          </li>
-          <li class="list__item"><a class="lk-course" href="#">
-            <div class="lk-course__head">
-              <div class="lk-course__block lk-course__block_title"><span class="subcaption">Курс</span><span class="caption" title="Пикап с любовью">Пикап с любовью</span>
-              </div>
-              <div class="lk-course__block"><span class="subcaption">Уроки</span>
-                <div class="progress">
-                  <progress class="progress__bar" value="6" max="6">
-                  </progress>
-                </div>
-              </div>
-            </div></a>
-          </li>
-        </ul>
+            </div>
+            <label class="field"><span class="field__input"><span class="subcaption">Имя</span>
+              <input type="text" value="Иван"/></span>
+              <button class="field__edit">
+                <svg>
+                  <use xlink:href="img/symbols.svg#svg-ico-edit"></use>
+                </svg>
+              </button>
+            </label>
+            <label class="field"><span class="field__input"><span class="subcaption">Фамилия</span>
+              <input type="text" value="Иванов"/></span>
+              <button class="field__edit">
+                <svg>
+                  <use xlink:href="img/symbols.svg#svg-ico-edit"></use>
+                </svg>
+              </button>
+            </label>
+            <label class="field"><span class="field__input"><span class="subcaption">Дата рождения</span>
+              <input type="date" value="2001-01-31"/></span>
+              <button class="field__edit">
+                <svg>
+                  <use xlink:href="img/symbols.svg#svg-ico-edit"></use>
+                </svg>
+              </button>
+            </label>
+            <label class="field"><span class="field__input"><span class="subcaption">Пароль</span>
+              <input type="password" value="password"/></span>
+              <button class="field__edit">
+                <svg>
+                  <use xlink:href="img/symbols.svg#svg-ico-edit"></use>
+                </svg>
+              </button>
+            </label>
+          </div>
+          <div class="form__block"><span class="caption caption_size-s">Контактная информация</span>
+            <label class="field"><span class="field__input"><span class="subcaption">Телефон</span>
+              <input type="text" value="+7 (923) 391 123 32 00"/></span>
+              <button class="field__edit">
+                <svg>
+                  <use xlink:href="img/symbols.svg#svg-ico-edit"></use>
+                </svg>
+              </button>
+            </label>
+            <label class="field"><span class="field__input"><span class="subcaption">Почта</span>
+              <input type="email" value="example@mail.ru"/></span>
+              <button class="field__edit">
+                <svg>
+                  <use xlink:href="img/symbols.svg#svg-ico-edit"></use>
+                </svg>
+              </button>
+            </label>
+            <label class="field"><span class="field__input"><span class="subcaption">Город</span>
+              <input type="text" value="Барнаул"/></span>
+              <button class="field__edit">
+                <svg>
+                  <use xlink:href="img/symbols.svg#svg-ico-edit"></use>
+                </svg>
+              </button>
+            </label>
+          </div>
+        </form>
       </div>
     </main>
     <footer class="footer">

@@ -1,5 +1,8 @@
 @import url('progress/style.less');
 @import url('doc/style.less');
+@import url('module/style.less');
+@import url('rating/style.less');
+@import url('comments/style.less');
 
 .lk-course {
   display: block;
@@ -107,5 +110,61 @@ details {
         transform: rotate(-45deg) scale(-1);
       }
     }
+  }
+}
+
+.course {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: -40px;
+
+  &__side {
+    width: 350px;
+    max-width: 100%;
+  }
+
+  &__modules {
+    max-height: 1500px;
+  }
+
+  &__main {
+    width: calc(~'100% - 380px');
+  }
+
+  &__title {
+    padding: 24px;
+    color: @colorTextLight;
+    background: @colorLink;
+    border-radius: 5px 5px 0 0;
+
+    .subcaption {
+      color: currentColor;
+    }
+  }
+
+  &__player {
+    width: 100%;
+    height: 370px;
+    margin: 24px 0;
+    background: #C4C4C4;
+  }
+
+  &__content {
+    margin: 32px 0;
+    padding: 24px;
+    background: @colorBackgroundLight;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  &__rating {
+    position: relative;
+    left: -30px;
+    margin: 40px 0;
+    width: calc(~'100% + 60px');
+    color: @colorTextLight;
+    background: @colorText;
+    padding: 24px 30px 52px;
   }
 }

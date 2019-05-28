@@ -2,6 +2,7 @@
 
 @import url('@{pluginsPath}/tingle.min.less');
 @import url('@{pluginsPath}/nice-select.less');
+@import url('@{pluginsPath}/simplebar.less');
 
 .select {
   padding: 0 56px 0 24px;
@@ -78,4 +79,29 @@
 
 .nice-select .list:hover .option.selected:not(:hover) {
   background: @colorHighlight !important;
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 6px;
+  background: @colorBackgroundGray;
+}
+
+.simplebar-scrollbar {
+  right: 0;
+  width: 100%;
+  transition: background .16s;
+}
+
+.simplebar-track .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 1;
+}
+
+.simplebar-scrollbar:before {
+  opacity: 1;
+  background: @colorTextGray;
+  border-radius: 8px;
+}
+
+.simplebar-height-auto-observer, .simplebar-track {
+  pointer-events: initial;
 }
