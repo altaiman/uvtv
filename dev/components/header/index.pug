@@ -58,7 +58,7 @@ mixin header(data)
     +e.main
       +e.container.container
         - if (data.select)
-            div
+            +e.block
               +b.H2.title= data.title
               +breadcrumbs([
                 {
@@ -67,7 +67,7 @@ mixin header(data)
                 }
               ])
               
-            div
+            +e.block
               +select({
                 title: 'Сфера деятельности',
                 options: [
@@ -80,7 +80,7 @@ mixin header(data)
               })
               
         - else
-          div
+          +e.block._full
             +b.H2.title= data.title
             +breadcrumbs([
               {

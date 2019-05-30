@@ -1,5 +1,5 @@
 mixin share(mod)
-  +b.share(class='_'+mod)
+  +b.share(class=mod ? '_'+mod : '')
     span Поделитесь статьей и поддержите нас:
     +e.UL.list
       +e.LI.item
