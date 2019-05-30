@@ -192,6 +192,15 @@
   // select
   $('select').niceSelect();
 
+  // side adaptive
+  document.querySelector('.avatar').addEventListener('click', (e) => {
+    if (window.outerWidth <= 768) {
+      e.preventDefault();
+
+      document.querySelector('.page__side').classList.toggle('page__side_show')
+    }
+  })
+
   // select
   // document.querySelectorAll('select').forEach((select, i) => {
   //   new CustomSelect({
