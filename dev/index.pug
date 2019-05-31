@@ -1,0 +1,113 @@
+//- includes
+include components/head/index.pug
+include components/svg/index.pug
+
+include components/header/index.pug
+include components/common/index.pug
+include components/side/index.pug
+include components/slider/index.pug
+include components/item/index.pug
+include components/footer/index.pug
+include components/footer/scripts.pug
+
+//- end includes
+
+//- variables page 
+- 
+	pageSettings = {
+		title: 'Страницы вёрстки',
+		side: false
+	}
+	
+mixin slide(data)
+	+e.LI.slide
+		+b.A.item._video(href=data.href target="_blank")
+			+e.DIV.block._image
+				+e.DIV.image
+					img(src=global.paths.pictures+'temp/'+data.img alt=data.title)
+				+e.DIV.hover
+					+b.DIV.ico
+						+svg({
+							name: 'ico-eye'
+						})
+					span Перейти
+			+e.DIV.block
+				+e.H4.title= data.title
+	
+//- end variables
+
+doctype html
+html(lang=global.lang)
+	+head(pageSettings)
+	+b.BODY.page(class=pageSettings.side ? '_side' : '')
+		+header({
+			title: pageSettings.title,
+			auth: false,
+			select: false
+		})
+		
+		if (pageSettings.side)
+			+e.ASIDE.side
+				+side
+		
+		+e.MAIN.content
+			+b.container
+				+slider({
+					title: 'Основное',
+					slider: 'items'
+				})
+					+slide({
+						title: 'Все курсы',
+						href: 'courses.html',
+						img: 'courses.jpg'
+					})
+					+slide({
+						title: 'Спикеры',
+						href: 'speakers.html',
+						img: 'speakers.jpg'
+					})
+					+slide({
+						title: 'Спикер',
+						href: 'speaker.html',
+						img: 'speaker.jpg'
+					})
+					+slide({
+						title: 'Статьи',
+						href: 'articles.html',
+						img: 'articles.jpg'
+					})
+					+slide({
+						title: 'Статья',
+						href: 'article.html',
+						img: 'article.jpg'
+					})
+								
+								
+				+slider({
+					title: 'Личный кабинет',
+					slider: 'items'
+				})
+					+slide({
+						title: 'ЛК - Курс',
+						href: 'lk-course.html',
+						img: 'lk-course.jpg'
+					})
+					+slide({
+						title: 'ЛК - Курсы',
+						href: 'lk-courses.html',
+						img: 'lk-courses.jpg'
+					})
+					+slide({
+						title: 'ЛК - Документы',
+						href: 'lk-docs.html',
+						img: 'lk-docs.jpg'
+					})
+					+slide({
+						title: 'ЛК - Профиль',
+						href: 'lk-profile.html',
+						img: 'lk-profile.jpg'
+					})
+
+		+footer
+		
+		+scripts

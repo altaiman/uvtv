@@ -1,8 +1,9 @@
 mixin field(data)
-  +b.LABEL.field
+  +b.LABEL.field(class=data.style ? '_'+data.style : '')
     +e.DIV.input
-      +b.SPAN.subcaption= data.name
-      input(type=data.type value=data.value)
+      - if (data.name)
+        +b.SPAN.subcaption= data.name
+      input(type=data.type value=data.value placeholder=data.placeholder)
     - if (data.edit)
       +e.BUTTON.edit
         +svg({

@@ -201,51 +201,40 @@
     }
   })
 
-  // select
-  // document.querySelectorAll('select').forEach((select, i) => {
-  //   new CustomSelect({
-  //     elem: select
-  //   });
-  // })
-
   // modals
-  // document.querySelectorAll('[data-modal-open]').forEach((trigger, i) => {
-  //   trigger.addEventListener('click', (e) => {
-  //     e.preventDefault()
-  //
-  //     const t = e.target.closest('[data-modal-open]'),
-  //           data = t.dataset.modalOpen,
-  //           modalElement = document.querySelector(`[data-modal="${data}"]`)
-  //
-  //     let modalContent = modalElement.innerHTML
-  //
-  //     if (data == 'gallery') {
-  //       modalContent = t.innerHTML
-  //     }
-  //
-  //     let modal = new tingle.modal({
-  //       closeMethods: ['overlay', 'escape'],
-  //       onClose: function() {
-  //         this.remove()
-  //       },
-  //       cssClass: modalElement.classList
-  //     });
-  //
-  //     modal.setContent(modalContent)
-  //     modal.open()
-  //
-  //     const forms = modal.modalBoxContent.querySelectorAll('form')
-  //
-  //     try {
-  //       document.querySelector('.modal__close').addEventListener('click', (e) => {
-  //         e.preventDefault()
-  //         modal.close()
-  //       })
-  //     } catch (e) {
-  //
-  //     }
-  //   })
-  // })
+  document.querySelectorAll('[data-modal-open]').forEach((trigger, i) => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault()
+
+      const t = e.target.closest('[data-modal-open]'),
+            data = t.dataset.modalOpen,
+            modalElement = document.querySelector(`[data-modal="${data}"]`)
+
+      let modalContent = modalElement.innerHTML
+
+      let modal = new tingle.modal({
+        closeMethods: ['overlay', 'escape'],
+        onClose: function() {
+          this.remove()
+        },
+        cssClass: modalElement.classList
+      });
+
+      modal.setContent(modalContent)
+      modal.open()
+
+      const forms = modal.modalBoxContent.querySelectorAll('form')
+
+      try {
+        document.querySelector('.modal__close').addEventListener('click', (e) => {
+          e.preventDefault()
+          modal.close()
+        })
+      } catch (e) {
+
+      }
+    })
+  })
 
 
 })(window);

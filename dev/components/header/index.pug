@@ -42,12 +42,8 @@ mixin header(data)
             +b.H2.title Заголовок
             +b.H3.caption._size-s Подзаголовок
           div
-            +button({
-              type: 'button',
-              style: 1,
-              name: 'Вход',
-              size: 'wide'
-            })
+            +b.BUTTON.button._transparent._size-wide(data-modal-open="login")
+              span Вход
             +button({
               type: 'button',
               style: 1,

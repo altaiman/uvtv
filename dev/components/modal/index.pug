@@ -1,0 +1,41 @@
+include ../form/index.pug
+
+mixin modal(data)
+  +b.modal(data-modal=data.modal class=data.style ? '_'+data.style : '')
+    +e.BUTTON.close
+    +e.content
+      +b.SPAN.caption Вход
+      +e.text
+        p. 
+          Вы можете войти в ЮВ-ТВ под вашей учетной записью сайта.<br>
+          Еще нет аккаунта? Тогда нужно <a href="#" class="link">зарегистрироваться</a>
+      +b.FORM.form
+        +field({
+          placeholder: 'Электронная почта',
+          type: 'mail',
+          edit: false,
+          style: 'size-s'
+        })
+        +field({
+          placeholder: 'Пароль',
+          type: 'password',
+          edit: false,
+          style: 'size-s'
+        })
+        +e.submit
+          +button({
+            type: 'button',
+            size: 'full',
+            name: 'Войти'
+          })
+          
+        +link({
+          name: 'Восстановить пароль',
+          href: '#'
+        })
+      +e.footer
+        +e.text
+          p. 
+            Создавая аккаунт, вы принимаете условия <a href="#" class="link">Пользовательского соглашения</a> 
+            и даете свое согласие<br> на <a href="#" class="link">обработку персональных данных</a>
+    
