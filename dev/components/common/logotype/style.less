@@ -14,11 +14,16 @@
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px @colorHighlight;
+    // box-shadow: 0 0 0 2px @colorHighlight;
+    transform: scale(1.1);
   }
 }
 
 .logotype_side {
   .positionCenter-X();
   bottom: -16px;
+
+  &:focus {
+    transform: translateX(-50%) scale(1.1);
+  }
 }

@@ -1,8 +1,8 @@
 include ../form/index.pug
 
 mixin modal(data)
-  +b.modal(data-modal=data.modal class=data.style ? '_'+data.style : '')
-    +e.BUTTON.close
+  +b.modal(data-modal=data.modal data-modal-type="modal" class=data.style ? '_'+data.style : '')
+    +e.BUTTON.close(data-izimodal-close)
     +e.content
       +b.SPAN.caption Вход
       +e.text
@@ -39,3 +39,6 @@ mixin modal(data)
             Создавая аккаунт, вы принимаете условия <a href="#" class="link">Пользовательского соглашения</a> 
             и даете свое согласие<br> на <a href="#" class="link">обработку персональных данных</a>
     
+mixin modalVideo
+  +b.modal._video(data-modal="video" data-modal-type="video")
+  

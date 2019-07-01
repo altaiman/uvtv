@@ -9,6 +9,7 @@ include components/slider/index.pug
 include components/item/index.pug
 include components/footer/index.pug
 include components/footer/scripts.pug
+include components/modal/index.pug
 
 //- end includes
 
@@ -68,5 +69,12 @@ html(lang=global.lang)
 				})
 
 		+footer
+		
+		+e.modals
+			+modal({
+				modal: 'login',
+				style: 'login'
+			})
+			+modalVideo
 		
 		+scripts

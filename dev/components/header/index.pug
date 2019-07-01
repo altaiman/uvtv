@@ -13,6 +13,11 @@ mixin header(data)
             })
           span Видеокурсы которые делают вашу жизнь лучше!
         
+        +e.links
+          +b.BUTTON.link._dark(data-modal-open="login") Вход
+          span / 
+          +b.A.link._dark(href="#") Регистрация
+          
         +e.drop
           +e.BUTTON.menu(data-drop="menu" data-drop-state="0")
             +b.ico

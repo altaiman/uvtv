@@ -15,6 +15,10 @@
               <use xlink:href="img/symbols.svg#svg-ico-smile"></use>
             </svg></span><span>Видеокурсы которые делают вашу жизнь лучше!</span>
           </h1>
+          <div class="header__links">
+            <button class="link link_dark" data-modal-open="login">Вход
+            </button><span>/ </span><a class="link link_dark" href="#">Регистрация</a>
+          </div>
           <div class="header__drop">
             <button class="header__menu" data-drop="menu" data-drop-state="0">
               <div class="ico">
@@ -205,6 +209,45 @@
       <div class="footer__container container container_flex">
       </div>
     </footer>
+    <div class="page__modals">
+      <div class="modal modal_login" data-modal="login" data-modal-type="modal">
+        <button class="modal__close" data-izimodal-close="data-izimodal-close">
+        </button>
+        <div class="modal__content"><span class="caption">Вход</span>
+          <div class="modal__text">
+            <p>
+              Вы можете войти в ЮВ-ТВ под вашей учетной записью сайта.<br>
+              Еще нет аккаунта? Тогда нужно <a href="#" class="link">зарегистрироваться</a>
+            </p>
+          </div>
+          <form class="form">
+            <label class="field field_size-s">
+              <div class="field__input">
+                <input type="mail" placeholder="Электронная почта"/>
+              </div>
+            </label>
+            <label class="field field_size-s">
+              <div class="field__input">
+                <input type="password" placeholder="Пароль"/>
+              </div>
+            </label>
+            <div class="form__submit">
+              <button class="button button_size-full"><span>Войти</span>
+              </button>
+            </div><a class="link" href="#">Восстановить пароль</a>
+          </form>
+          <div class="modal__footer">
+            <div class="modal__text">
+              <p>
+                Создавая аккаунт, вы принимаете условия <a href="#" class="link">Пользовательского соглашения</a> 
+                и даете свое согласие<br> на <a href="#" class="link">обработку персональных данных</a>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="js/libs.js"></script>
     <script src="js/script.js"></script>
     <script src="js/maps.js"></script>

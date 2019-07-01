@@ -193,47 +193,82 @@
   $('select').niceSelect();
 
   // side adaptive
-  document.querySelector('.avatar').addEventListener('click', (e) => {
-    if (window.outerWidth <= 768) {
-      e.preventDefault();
+  const avatar = document.querySelector('.avatar')
 
-      document.querySelector('.page__side').classList.toggle('page__side_show')
-    }
-  })
+  if (avatar) {
+    avatar.addEventListener('click', (e) => {
+      if (window.outerWidth <= 768) {
+        e.preventDefault();
 
-  // modals
-  document.querySelectorAll('[data-modal-open]').forEach((trigger, i) => {
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault()
-
-      const t = e.target.closest('[data-modal-open]'),
-            data = t.dataset.modalOpen,
-            modalElement = document.querySelector(`[data-modal="${data}"]`)
-
-      let modalContent = modalElement.innerHTML
-
-      let modal = new tingle.modal({
-        closeMethods: ['overlay', 'escape'],
-        onClose: function() {
-          this.remove()
-        },
-        cssClass: modalElement.classList
-      });
-
-      modal.setContent(modalContent)
-      modal.open()
-
-      const forms = modal.modalBoxContent.querySelectorAll('form')
-
-      try {
-        document.querySelector('.modal__close').addEventListener('click', (e) => {
-          e.preventDefault()
-          modal.close()
-        })
-      } catch (e) {
-
+        document.querySelector('.page__side').classList.toggle('page__side_show')
       }
     })
+  }
+
+  // modals
+  // document.querySelectorAll('[data-modal-open]').forEach((trigger, i) => {
+  //   trigger.addEventListener('click', (e) => {
+  //     e.preventDefault()
+  //
+  //     const t = e.target.closest('[data-modal-open]'),
+  //           data = t.dataset.modalOpen,
+  //           modalElement = document.querySelector(`[data-modal="${data}"]`)
+  //
+  //     let modalContent = modalElement.innerHTML
+  //
+  //     let modal = new tingle.modal({
+  //       closeMethods: ['overlay', 'escape'],
+  //       onClose: function() {
+  //         this.remove()
+  //       },
+  //       cssClass: modalElement.classList
+  //     });
+  //
+  //     modal.setContent(modalContent)
+  //     modal.open()
+  //
+  //     const forms = modal.modalBoxContent.querySelectorAll('form')
+  //
+  //     try {
+  //       document.querySelector('.modal__close').addEventListener('click', (e) => {
+  //         e.preventDefault()
+  //         modal.close()
+  //       })
+  //     } catch (e) {
+  //
+  //     }
+  //   })
+  // })
+
+  // modals
+
+  $('[data-modal-type="modal"]').iziModal()
+
+  $('[data-modal-open]').on('click', function(e) {
+    e.preventDefault()
+
+    const data = $(this).data('modal-open'),
+          modal = $(`[data-modal="${data}"]`),
+          type = $(modal).data('modal-type')
+
+    switch (type) {
+      case 'video':
+        const urlVideo = $(this).attr('href')
+
+        $(modal).iziModal({
+          iframe: true,
+          overlayColor: 'rgba(0, 0, 0, 0.9)',
+          iframeURL: urlVideo
+        })
+
+        $(modal).iziModal('open')
+
+        break;
+      default:
+        $(modal).iziModal('open')
+
+    }
+
   })
 
 

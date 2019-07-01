@@ -227,23 +227,6 @@
   }
 }
 
-.item_page {
-  height: 597px;
-  box-shadow: none;
-  margin-bottom: 56px;
-
-  &:focus,
-  &:hover {
-    box-shadow: none;
-  }
-
-  .item {
-    &__block {
-      padding: 0;
-    }
-  }
-}
-
 .item_full {
   flex-direction: row;
 
@@ -259,6 +242,24 @@
 
     &__footer {
       padding: 20px 40px 40px;
+    }
+  }
+}
+
+.item_page {
+  height: 597px;
+  box-shadow: none;
+  margin-bottom: 56px;
+
+  &:focus,
+  &:hover {
+    box-shadow: none;
+  }
+
+  .item {
+    &__block,
+    &__footer  {
+      padding-left: 0;
     }
   }
 }

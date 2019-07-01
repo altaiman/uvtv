@@ -1,9 +1,14 @@
 .link {
   display: inline-block;
   vertical-align: bottom;
+  padding: 0;
   margin: 0 8px;
   font-weight: 500;
   color: @colorLink;
+  cursor: pointer;
+  background: none;
+  border: none;
+  box-shadow: none;
   transition: all .16s;
 
   &:hover,
@@ -31,6 +36,11 @@
 
 .link_gray {
   color: @colorTextGray;
+  text-decoration: none;
+}
+
+.link_dark {
+  color: @colorText;
   text-decoration: none;
 }
 

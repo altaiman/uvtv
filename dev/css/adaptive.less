@@ -36,15 +36,19 @@
 
   .logotype_side {
     position: static;
-    width: 69px;
-    height: 60px;
+    width: 100%;
+    height: auto;
     overflow: hidden;
     transform: none;
 
     img {
-      max-width: initial;
-      height: 100%;
+      // max-width: initial;
+      // height: 100%;
       pointer-events: none;
+    }
+
+    &:focus {
+      transform: scale(1.1);
     }
   }
 
