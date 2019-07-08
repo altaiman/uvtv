@@ -1,5 +1,7 @@
 mixin textarea(data)
-  +b.LABEL.field._text
+  +b.LABEL.field._text(class=data.style ? '_'+data.style : '')
     +e.DIV.input
+      - if (data.name)
+        +e.SPAN.name.subcaption__= data.name
       +e.TEXTAREA(placeholder=data.placeholder value=data.value)
     

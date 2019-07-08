@@ -1,0 +1,170 @@
+//- includes
+include components/head/index.pug
+include components/svg/index.pug
+
+include components/header/index.pug
+include components/common/index.pug
+include components/side/index.pug
+include components/slider/index.pug
+include components/item/index.pug
+include components/footer/index.pug
+include components/footer/scripts.pug
+include components/modal/index.pug
+
+//- end includes
+
+//- variables page 
+- 
+	pageSettings = {
+		title: 'О нас',
+		side: true
+	}
+
+//- end variables
+
+doctype html
+html(lang=global.lang)
+	+head(pageSettings)
+	+b.BODY.page(class=pageSettings.side ? '_side' : '')
+		+header({
+			title: pageSettings.title,
+			auth: false,
+			select: false
+		})
+		
+		if (pageSettings.side)
+			+e.ASIDE.side
+				+side
+		
+		+e.MAIN.content
+			+b.container
+				+b.SECTION.section
+					+e.main
+						+e.block._size-half
+							+e.content.content
+								p. 
+									<strong>ЮВ TV</strong> - ваш помощник и проводник к лучшей жизни.
+								p. 
+									На нашем сайте вы найдёте всё то, что интересует девушек, то, о чём они 
+									узнают у подруг, мам, спрашивают в Интернете, но часто так и не находят 
+									ответы на свои вопросы. Все вопросы мы собрали, распределили по темам, 
+									подготовили необходимые ресурсы, чтобы вы знали ЧТО,  КАК, ЗАЧЕМ делать 
+									и получили информацию в комфортном для вас формате.
+								p. 
+									Вся подробная информация о курсах, о спикерах, ссылки на их статьи и видеоролики размещены в разделах нашего сайта.
+									
+						+e.block._size-half
+							+e.content.content
+								img(src="img/uvtv-logotype.svg")
+									
+				+b.SECTION.section
+					+e.title
+						+b.H3.caption Наша команда
+					+e.main
+						+sliderTeam
+						
+				+b.SECTION.section
+					+e.title
+						+b.H3.caption Сотрудничество
+					+e.main
+						+e.block._size-half
+							+b.FORM.form._size-m(id="partnership-speaker")
+								+e.block
+									+b.SPAN.caption._size-s Если вы хотите быть нашим спикером, заполните форму ниже
+
+									+field({
+										name: 'ФИО',
+										type: 'text',
+										style: 'size-s _style-form'
+									})
+									+field({
+										name: 'Город',
+										type: 'text',
+										style: 'size-s _style-form'
+									})
+									+field({
+										name: 'Ваша специализация',
+										type: 'text',
+										style: 'size-s _style-form'
+									})
+									+field({
+										name: 'Телефон',
+										type: 'text',
+										style: 'size-s _style-form'
+									})
+									+field({
+										name: 'Почта',
+										type: 'email',
+										style: 'size-s _style-form'
+									})
+									+textarea({
+										name: 'О себе / Ваши предложения',
+										style: 'style-form'
+									})
+									
+									+e.submit
+										+button({
+											type: 'button',
+											size: 's',
+											name: 'Отправить'
+										})
+										
+						+e.block._size-half
+							+e.content.content
+								p. 
+									Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. 
+								p. 
+									Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. 
+									В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, 
+									используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил 
+									без заметных изменений пять веков, но и перешагнул в электронный дизайн. 
+								p. 
+									Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum 
+									в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, 
+									в шаблонах которых используется Lorem Ipsum.
+						
+						+e.block._size-half
+							+e.content.content
+								p. 
+									Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. 
+								p. 
+									Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. 
+									В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, 
+									используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил 
+									без заметных изменений пять веков, но и перешагнул в электронный дизайн. 
+						
+						+e.block._size-half
+							+b.FORM.form._size-m(id="partnership-commercial")
+								+b.SPAN.caption._size-s Предложения по рекламе
+
+								+field({
+									name: 'ФИО',
+									type: 'text',
+									style: 'size-s _style-form'
+								})
+								+field({
+									name: 'Телефон',
+									type: 'text',
+									style: 'size-s _style-form'
+								})
+								+textarea({
+									name: 'Предложение',
+									style: 'style-form'
+								})
+								
+								+e.submit._align-right
+									+button({
+										type: 'button',
+										size: 's',
+										name: 'Отправить'
+									})
+				
+		+footer
+		
+		+e.modals
+			+modal({
+				modal: 'login',
+				style: 'login'
+			})
+		
+		+scripts

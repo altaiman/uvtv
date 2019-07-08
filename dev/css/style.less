@@ -154,11 +154,40 @@ input[type=number] {
 	}
 }
 
-.component {
-	margin: 50px auto;
+.section {
+	position: relative;
+	margin: 0 0 56px;
 
-	&__line {
-		margin: 0 0 20px;
+	&__main {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&__title {
+		display: block;
+		margin: 0 0 48px;
+		width: 100%;
+		text-align: center;
+	}
+
+	&__block {
+		width: 100%;
+		margin: 0 0 48px;
+	}
+
+	&__block_size-half {
+		width: 50%;
+		padding: 0 24px;
+
+		&:nth-child(even){
+			padding-right: 0;
+		}
+
+		&:nth-child(odd){
+			padding-left: 0;
+		}
 	}
 }
 

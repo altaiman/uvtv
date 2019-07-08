@@ -9,6 +9,11 @@
       cellAlign: 'left',
       pageDots: false,
       prevNextButtons: false,
+    },
+    'team': {
+      cellAlign: 'center',
+      pageDots: false,
+      prevNextButtons: false,
     }
   }
 
@@ -26,10 +31,15 @@
           controlsEndIndex = slidesCount - slidesCapacity,
           adaptive = Number(slider.dataset.sliderAdaptive),
           windowWidth = window.innerWidth,
-          progressBar = slider.querySelector('[data-slider-progress]'),
-          progressStep = Math.round(100 / (slidesCount-slidesCapacity+1))
+          progressBar = slider.querySelector('[data-slider-progress]')
 
-    progressBar.style.width = `${progressStep}%`
+    let progressStep
+
+    if (progressBar) {
+      progressStep = Math.round(100 / (slidesCount-slidesCapacity+1))
+
+      progressBar.style.width = `${progressStep}%`
+    }
 
     if (slidesCount > slidesCapacity) {
       slider.classList.add('slider_initial')
@@ -55,12 +65,14 @@
         }
 
         flkty.on('select', (index) => {
-          let progressCurrent = parseInt(progressBar.style.left) || 0
+          if (progressBar) {
+            let progressCurrent = parseInt(progressBar.style.left) || 0
+            progressBar.style.left = `${progressStep*index}%`
+          }
 
           controlsPrev.disabled = (index == 0) ? true : false
           controlsNext.disabled = (index == controlsEndIndex) ? true : false
 
-          progressBar.style.left = `${progressStep*index}%`
         })
 
         flkty.on('change', (index) => {

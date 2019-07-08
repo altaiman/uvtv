@@ -5,7 +5,9 @@ mixin button(data)
     - if (data.ico)
       +b.BUTTON.button(
         class=((data.size) ? `_size-${data.size}` : '') 
-        class=buttonStyles[data.style])
+        class=buttonStyles[data.style])&attributes({
+            'data-modal': data.modal
+          })
         +e.DIV.ico.ico(class=data.ico.sizeContainer)
           +svg({
             name: data.ico.name,
@@ -15,7 +17,9 @@ mixin button(data)
     - else
       +b.BUTTON.button(
         class=((data.size) ? `_size-${data.size}` : '') 
-        class=buttonStyles[data.style])
+        class=buttonStyles[data.style])&attributes({
+            'data-modal': data.modal
+          })
         span= data.name
   - else if (data.type == 'link')
     - if (data.ico)

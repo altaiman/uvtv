@@ -2,6 +2,7 @@
   position: relative;
   padding: 56px 0;
   margin-bottom: 56px;
+  width: 100%;
 
   &__slides {
     display: flex;
@@ -98,6 +99,41 @@
   }
 }
 
+.slider_team {
+  margin: 0;
+  padding: 0;
+
+  .slider {
+    &__slide {
+      width: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .32s;
+
+      &.is-selected {
+        opacity: 1;
+        pointer-events: initial;
+      }
+
+      &:nth-child(even) {
+        .person {
+          justify-content: flex-start;
+
+          &__image {
+            right: 0;
+            left: auto;
+          }
+        }
+      }
+    }
+
+    &__controls {
+      z-index: 3;
+      width: 100%;
+    }
+  }
+}
+
 .slider_initial {
   margin-bottom: 126px;
 
@@ -149,4 +185,91 @@
 
 .arrow_prev {
   transform: scaleX(-1);
+}
+
+.person {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 500px;
+  width: 100%;
+
+  &__content {
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  &__image {
+    .positionCenter-Y();
+    left: 0;
+    width: calc(~'100% - 640px');
+    height: 100%;
+
+    &:hover {
+      img {
+        &:nth-child(1) {
+          opacity: 0;
+        }
+
+        &:nth-child(2) {
+          opacity: 1;
+        }
+      }
+    }
+
+    img {
+      .positionCenter();
+      max-width: 100%;
+      max-height: 100%;
+
+      &:nth-child(1) {
+        opacity: 1;
+        transition: all .6s ease-out;
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        transition: all .6s ease-out;
+      }
+    }
+
+    &::before {
+      .positionCenter-X();
+      z-index: 1;
+      bottom: -1px;
+      width: 100%;
+      height: 30%;
+      content: '';
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 90%, #FFFFFF 100%, #FFFFFF 100%);
+      pointer-events: none;
+    }
+  }
+
+  &__quote {
+    font-size: @fontSizeCaptionS;
+    padding: 0 10%;
+
+    p {
+      position: relative;
+      margin: 0;
+
+      &::before,
+      &::after {
+        display: inline-block;
+        margin: 0 4px;
+        font-weight: 800;
+        color: @colorHighlight;
+      }
+
+      &::before {
+        content: '“';
+      }
+
+      &::after {
+        content: '”';
+      }
+    }
+  }
 }

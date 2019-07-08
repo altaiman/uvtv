@@ -1,0 +1,17 @@
+include data.pug
+
+mixin sliderTeam(data)
+  +slider({
+    slider: 'team',
+    style: '_team'
+  })
+    each item in teamData
+      +e.LI.slide
+        +b.person
+          +e.image
+            img(src=global.paths.images+'persona/'+item.photo[0] alt=item.name)
+            img(src=global.paths.images+'persona/'+item.photo[1] alt=item.name)
+          +e.content
+            +b.SPAN.caption= item.name
+            +e.quote
+              p!= item.quote

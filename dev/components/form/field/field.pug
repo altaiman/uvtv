@@ -2,7 +2,7 @@ mixin field(data)
   +b.LABEL.field(class=data.style ? '_'+data.style : '')
     +e.DIV.input
       - if (data.name)
-        +b.SPAN.subcaption= data.name
+        +e.SPAN.name.subcaption__= data.name
       input(type=data.type value=data.value placeholder=data.placeholder)
     - if (data.edit)
       +e.BUTTON.edit

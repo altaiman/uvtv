@@ -3,7 +3,8 @@ include data.pug
 mixin sliderWebinars(data)
   +slider({
     title: data.title,
-    slider: 'items'
+    slider: 'items',
+    progress: true
   })
     each item in webinarsData
       +e.LI.slide

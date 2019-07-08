@@ -86,8 +86,70 @@
       width: 100%;
     }
   }
+
+  &.field_style-form {
+    .field {
+      &__name {
+        margin: 0 0 8px;
+      }
+
+      &__input {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
 }
 
 .field_size-s {
+  position: relative;
   height: 56px;
+  padding: 18px 24px;
+
+  .field {
+    &__name {
+      position: relative;
+      top: 4px;
+    }
+  }
+}
+
+.field_style-form {
+  padding: 8px 0;
+  height: auto;
+  border: none;
+
+  .field {
+
+    &__input {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      padding: 0;
+
+      input,
+      textarea {
+        border-bottom: 1px solid @colorText;
+
+        &:focus {
+          border-bottom-color: @colorHighlight;
+        }
+      }
+
+      textarea {
+        height: 100px;
+      }
+    }
+
+    &__name {
+      top: 0;
+      padding-right: 8px;
+      margin: 0;
+      color: @colorText;
+
+      &::after {
+        content: ':';
+      }
+    }
+  }
 }
