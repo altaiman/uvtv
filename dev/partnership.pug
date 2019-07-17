@@ -1,0 +1,117 @@
+//- includes
+include components/head/index.pug
+include components/svg/index.pug
+
+include components/header/index.pug
+include components/common/index.pug
+include components/side/index.pug
+include components/slider/index.pug
+include components/item/index.pug
+include components/footer/index.pug
+include components/footer/scripts.pug
+include components/modal/index.pug
+
+//- end includes
+
+//- variables page 
+- 
+	pageSettings = {
+		title: 'Сотрудничество',
+		side: true
+	}
+
+//- end variables
+
+doctype html
+html(lang=global.lang)
+	+head(pageSettings)
+	+b.BODY.page(class=pageSettings.side ? '_side' : '')
+		+header({
+			title: pageSettings.title,
+			auth: false,
+			select: false
+		})
+		
+		if (pageSettings.side)
+			+e.ASIDE.side
+				+side
+		
+		+e.MAIN.content
+			+b.container
+						
+				+b.SECTION.section
+					+b.FORM.form._size-m(id="partnership-speaker")
+						+e.block
+							+b.SPAN.caption._size-s Если вы хотите быть нашим спикером, заполните форму ниже
+
+							+field({
+								name: 'ФИО',
+								type: 'text',
+								style: 'size-s'
+							})
+							+field({
+								name: 'Город',
+								type: 'text',
+								style: 'size-s'
+							})
+							+field({
+								name: 'Ваша специализация',
+								type: 'text',
+								style: 'size-s'
+							})
+							+field({
+								name: 'Телефон',
+								type: 'text',
+								style: 'size-s'
+							})
+							+field({
+								name: 'Почта',
+								type: 'email',
+								style: 'size-s'
+							})
+							+textarea({
+								name: 'О себе / Ваши предложения',
+							})
+							
+							+e.submit._align-center
+								+button({
+									type: 'button',
+									size: 's',
+									name: 'Отправить'
+								})
+
+						+b.FORM.form._size-m(id="partnership-commercial")
+							+b.SPAN.caption._size-s Предложения по рекламе
+
+							+field({
+								name: 'ФИО',
+								type: 'text',
+								style: 'size-s'
+							})
+							+field({
+								name: 'Телефон',
+								type: 'text',
+								style: 'size-s'
+							})
+							+textarea({
+								name: 'Предложение',
+							})
+							
+							+e.submit._align-center
+								+button({
+									type: 'button',
+									size: 's',
+									name: 'Отправить'
+								})
+				
+		+footer
+		
+		+e.modals
+			+modal({
+				modal: 'login',
+				style: 'login'
+			})
+			+modalVideo
+			
+		
+		+scripts

@@ -42,3 +42,15 @@ mixin modal(data)
 mixin modalVideo
   +b.modal._video(data-modal="video" data-modal-type="video")
   
+mixin modalPerson
+  +b.modal._person(data-modal="person" data-modal-type="modal")
+    +e.BUTTON.close(data-izimodal-close)
+    +b.person._modal
+      +e.image
+        img(src=global.paths.images+'persona/kolesnikov-2.jpg')
+        
+      +e.content
+        +e.quote
+          p У девушек всегда есть что решать, но не всегда есть решения. Кто, если не я, им в этом поможет?
+        +e.SPAN.position Основатель проекта ЮВ TV
+          

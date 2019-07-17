@@ -9,11 +9,6 @@
       cellAlign: 'left',
       pageDots: false,
       prevNextButtons: false,
-    },
-    'team': {
-      cellAlign: 'center',
-      pageDots: false,
-      prevNextButtons: false,
     }
   }
 
@@ -260,7 +255,7 @@
     e.preventDefault()
 
     const data = $(this).data('modal-open'),
-          modal = $(`[data-modal="${data}"]`),
+          modal = $(`[data-modal="${data}"]`)[0],
           type = $(modal).data('modal-type')
 
     switch (type) {
@@ -277,6 +272,7 @@
 
         break;
       default:
+        console.log(modal)
         $(modal).iziModal('open')
 
     }

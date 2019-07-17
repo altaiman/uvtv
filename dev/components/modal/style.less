@@ -40,6 +40,7 @@
 
   &__close {
     position: absolute;
+    z-index: 9;
     top: 16px;
     right: 16px;
     width: 24px;
@@ -85,4 +86,12 @@
   background: none !important;
   border: none;
   width: 800px;
+}
+
+.modal_person {
+  width: 648px;
+}
+
+[data-modal-open] {
+  cursor: pointer;
 }

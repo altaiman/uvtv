@@ -101,30 +101,11 @@
 
 .slider_team {
   margin: 0;
-  padding: 0;
+  padding: 0 0 48px;
 
   .slider {
-    &__slide {
-      width: 100%;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .32s;
-
-      &.is-selected {
-        opacity: 1;
-        pointer-events: initial;
-      }
-
-      &:nth-child(even) {
-        .person {
-          justify-content: flex-start;
-
-          &__image {
-            right: 0;
-            left: auto;
-          }
-        }
-      }
+    &__slides {
+      justify-content: center;
     }
 
     &__controls {
@@ -189,23 +170,46 @@
 
 .person {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  height: 500px;
-  width: 100%;
+  height: 368px;
+  width: 250px;
 
   &__content {
-    width: 600px;
+    width: calc(~'100% - 300px');
     max-width: 100%;
     text-align: center;
   }
 
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(~'100% - 308px');
+    color: @colorTextLight;
+    background: @colorHighlight;
+    text-align: center;
+  }
+
+  &__name {
+    display: block;
+    margin: 0 0 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__position {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
   &__image {
-    .positionCenter-Y();
-    left: 0;
-    width: calc(~'100% - 640px');
-    height: 100%;
+    position: relative;
+    width: 100%;
+    height: 308px;
+    overflow: hidden;
 
     &:hover {
       img {
@@ -221,8 +225,8 @@
 
     img {
       .positionCenter();
-      max-width: 100%;
-      max-height: 100%;
+      // max-width: 100%;
+      // max-height: 100%;
 
       &:nth-child(1) {
         opacity: 1;
@@ -235,21 +239,21 @@
       }
     }
 
-    &::before {
-      .positionCenter-X();
-      z-index: 1;
-      bottom: -1px;
-      width: 100%;
-      height: 30%;
-      content: '';
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 90%, #FFFFFF 100%, #FFFFFF 100%);
-      pointer-events: none;
-    }
+    // &::before {
+    //   .positionCenter-X();
+    //   z-index: 1;
+    //   bottom: -1px;
+    //   width: 100%;
+    //   height: 30%;
+    //   content: '';
+    //   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 90%, #FFFFFF 100%, #FFFFFF 100%);
+    //   pointer-events: none;
+    // }
   }
 
   &__quote {
     font-size: @fontSizeCaptionS;
-    padding: 0 10%;
+    margin: 0 0 16px;
 
     p {
       position: relative;
@@ -270,6 +274,29 @@
       &::after {
         content: '”';
       }
+    }
+  }
+}
+
+.person_modal {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+
+  .person {
+    &__image {
+      width: 250px;
+      pointer-events: none;
+    }
+
+    &__position {
+      text-align: right;
+    }
+
+    &__content {
+      width: calc(~'100% - 250px')
     }
   }
 }

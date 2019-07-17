@@ -107,22 +107,6 @@
       }
     }
   }
-
-  .person {
-    height: 35vw;
-
-    &__content {
-      width: 500px;
-    }
-
-    &__image {
-      width: calc(~'100% - 540px');
-    }
-
-    &__quote {
-      font-size: @fontSizeDefault;
-    }
-  }
 }
 
 @media (max-width: 1000px) {
@@ -273,26 +257,6 @@
 
     &__title {
       display: none;
-    }
-  }
-
-  .person {
-    flex-direction: column;
-    height: 400px;
-
-    &__image {
-      position: relative;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      transform: none;
-      margin: 0 0 24px;
-      width: 100%;
-    }
-
-    &__quote {
-      padding: 0 5%;
     }
   }
 
@@ -726,12 +690,14 @@
 
   .field_size-s {
     height: 40px;
-    line-height: 40px;
+    // line-height: 40px;
   }
+
+
 
   .field_text {
     height: 100px;
-    padding: 8px;
+    padding: 16px;
   }
 
   .course {
@@ -924,6 +890,22 @@
       line-height: 1.4;
     }
   }
+
+  .person_modal {
+    padding: 20px;
+    flex-direction: column;
+
+    .person {
+      &__image {
+        width: 100%;
+        margin: 0 0 20px;
+      }
+
+      &__content {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media (max-width: 540px) {
@@ -1011,12 +993,6 @@
       &__progress {
         overflow: hidden;
       }
-    }
-  }
-
-  .person {
-    &__quote {
-      padding: 0;
     }
   }
 }
