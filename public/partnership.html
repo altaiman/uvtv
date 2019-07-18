@@ -147,56 +147,56 @@
           <form class="form form_size-m" id="partnership-speaker">
             <div class="form__block"><span class="caption caption_size-s">Если вы хотите быть нашим спикером, заполните форму ниже</span>
               <label class="field field_size-s">
-                <div class="field__input"><span class="field__name subcaption">ФИО</span>
-                  <input type="text"/>
+                <div class="field__input">
+                  <input type="text" placeholder="ФИО"/>
                 </div>
               </label>
               <label class="field field_size-s">
-                <div class="field__input"><span class="field__name subcaption">Город</span>
-                  <input type="text"/>
+                <div class="field__input">
+                  <input type="text" placeholder="Город"/>
                 </div>
               </label>
               <label class="field field_size-s">
-                <div class="field__input"><span class="field__name subcaption">Ваша специализация</span>
-                  <input type="text"/>
+                <div class="field__input">
+                  <input type="text" placeholder="Ваша специализация"/>
                 </div>
               </label>
               <label class="field field_size-s">
-                <div class="field__input"><span class="field__name subcaption">Телефон</span>
-                  <input type="text"/>
+                <div class="field__input">
+                  <input type="text" placeholder="Телефон"/>
                 </div>
               </label>
               <label class="field field_size-s">
-                <div class="field__input"><span class="field__name subcaption">Почта</span>
-                  <input type="email"/>
+                <div class="field__input">
+                  <input type="email" placeholder="Почта"/>
                 </div>
               </label>
               <label class="field field_text">
-                <div class="field__input"><span class="field__name subcaption">О себе / Ваши предложения</span><textarea></textarea>
+                <div class="field__input"><textarea placeholder="О себе / Ваши предложения"></textarea>
                 </div>
               </label>
               <div class="form__submit form__submit_align-center">
-                <button class="button button_size-s"><span>Отправить</span>
+                <button class="button button_size-s" data-modal-open="thanks"><span>Отправить</span>
                 </button>
               </div>
             </div>
             <form class="form form_size-m" id="partnership-commercial"><span class="caption caption_size-s">Предложения по рекламе</span>
               <label class="field field_size-s">
-                <div class="field__input"><span class="field__name subcaption">ФИО</span>
-                  <input type="text"/>
+                <div class="field__input">
+                  <input type="text" placeholder="ФИО"/>
                 </div>
               </label>
               <label class="field field_size-s">
-                <div class="field__input"><span class="field__name subcaption">Телефон</span>
-                  <input type="text"/>
+                <div class="field__input">
+                  <input type="text" placeholder="Телефон"/>
                 </div>
               </label>
               <label class="field field_text">
-                <div class="field__input"><span class="field__name subcaption">Предложение</span><textarea></textarea>
+                <div class="field__input"><textarea placeholder="Предложение"></textarea>
                 </div>
               </label>
               <div class="form__submit form__submit_align-center">
-                <button class="button button_size-s"><span>Отправить</span>
+                <button class="button button_size-s" data-modal-open="thanks"><span>Отправить</span>
                 </button>
               </div>
             </form>
@@ -246,7 +246,14 @@
           </div>
         </div>
       </div>
-      <div class="modal modal_video" data-modal="video" data-modal-type="video">
+      <div class="modal modal_thanks" data-modal="thanks" data-modal-type="modal">
+        <button class="modal__close" data-izimodal-close="data-izimodal-close">
+        </button>
+        <div class="modal__content"><span class="caption">Благодорим за заполнение формы!</span>
+          <div class="modal__text">
+            <p>В ближайшее время мы свяжемся с Вами по оставленным Вами контактами.</p>
+          </div>
+        </div>
       </div>
     </div>
     <script src="js/libs.js"></script>

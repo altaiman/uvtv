@@ -45,64 +45,58 @@ html(lang=global.lang)
 							+b.SPAN.caption._size-s Если вы хотите быть нашим спикером, заполните форму ниже
 
 							+field({
-								name: 'ФИО',
+								placeholder: 'ФИО',
 								type: 'text',
 								style: 'size-s'
 							})
 							+field({
-								name: 'Город',
+								placeholder: 'Город',
 								type: 'text',
 								style: 'size-s'
 							})
 							+field({
-								name: 'Ваша специализация',
+								placeholder: 'Ваша специализация',
 								type: 'text',
 								style: 'size-s'
 							})
 							+field({
-								name: 'Телефон',
+								placeholder: 'Телефон',
 								type: 'text',
 								style: 'size-s'
 							})
 							+field({
-								name: 'Почта',
+								placeholder: 'Почта',
 								type: 'email',
 								style: 'size-s'
 							})
 							+textarea({
-								name: 'О себе / Ваши предложения',
+								placeholder: 'О себе / Ваши предложения',
 							})
 							
 							+e.submit._align-center
-								+button({
-									type: 'button',
-									size: 's',
-									name: 'Отправить'
-								})
+								+b.BUTTON.button._size-s(data-modal-open="thanks")
+									span Отправить
 
 						+b.FORM.form._size-m(id="partnership-commercial")
 							+b.SPAN.caption._size-s Предложения по рекламе
 
 							+field({
-								name: 'ФИО',
+								placeholder: 'ФИО',
 								type: 'text',
 								style: 'size-s'
 							})
 							+field({
-								name: 'Телефон',
+								placeholder: 'Телефон',
 								type: 'text',
 								style: 'size-s'
 							})
 							+textarea({
-								name: 'Предложение',
+								placeholder: 'Предложение',
 							})
 							
 							+e.submit._align-center
-								+button({
-									type: 'button',
-									size: 's',
-									name: 'Отправить'
-								})
+								+b.BUTTON.button._size-s(data-modal-open="thanks")
+									span Отправить
 				
 		+footer
 		

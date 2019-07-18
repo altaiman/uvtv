@@ -54,3 +54,10 @@ mixin modalPerson
           p У девушек всегда есть что решать, но не всегда есть решения. Кто, если не я, им в этом поможет?
         +e.SPAN.position Основатель проекта ЮВ TV
           
+mixin modalVideo
+  +b.modal._thanks(data-modal="thanks" data-modal-type="modal")
+    +e.BUTTON.close(data-izimodal-close)
+    +e.content
+      +b.SPAN.caption Благодорим за заполнение формы!
+      +e.text
+        p В ближайшее время мы свяжемся с Вами по оставленным Вами контактами.

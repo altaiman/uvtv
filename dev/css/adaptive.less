@@ -891,18 +891,44 @@
     }
   }
 
+  .person {
+    height: 360px;
+
+    &__quote {
+      font-size: 16px;
+    }
+  }
+
+  .slider_team {
+    .slider {
+      &__slide {
+        padding: 0 40px 0 26px;
+        width: 300px;
+        margin: 0;
+      }
+    }
+  }
+
   .person_modal {
     padding: 20px;
     flex-direction: column;
 
     .person {
       &__image {
-        width: 100%;
+        width: 300px;
+        max-width: 100%;
+        height: auto;
         margin: 0 0 20px;
+
+        img {
+          position: static;
+          transform: none;
+        }
       }
 
       &__content {
         width: 100%;
+        padding: 0;
       }
     }
   }
